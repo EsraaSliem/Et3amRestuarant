@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C75B9A6B2289755000795EC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B9A6A2289755000795EC1 /* AppDelegate.swift */; };
+		C75B9A6D2289755000795EC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B9A6C2289755000795EC1 /* ViewController.swift */; };
+		C75B9A702289755000795EC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75B9A6E2289755000795EC1 /* Main.storyboard */; };
+		C75B9A732289755000795EC1 /* Et3amRestaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C75B9A712289755000795EC1 /* Et3amRestaurant.xcdatamodeld */; };
+		C75B9A752289755000795EC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75B9A742289755000795EC1 /* Assets.xcassets */; };
+		C75B9A782289755000795EC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75B9A762289755000795EC1 /* LaunchScreen.storyboard */; };
+		C75B9A832289755000795EC1 /* Et3amRestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B9A822289755000795EC1 /* Et3amRestaurantTests.swift */; };
+		C75B9A8E2289755000795EC1 /* Et3amRestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B9A8D2289755000795EC1 /* Et3amRestaurantUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C75B9A7F2289755000795EC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C75B9A5F2289755000795EC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C75B9A662289755000795EC1;
+			remoteInfo = Et3amRestaurant;
+		};
+		C75B9A8A2289755000795EC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C75B9A5F2289755000795EC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C75B9A662289755000795EC1;
+			remoteInfo = Et3amRestaurant;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C75B9A672289755000795EC1 /* Et3amRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Et3amRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C75B9A6A2289755000795EC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C75B9A6C2289755000795EC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C75B9A6F2289755000795EC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C75B9A722289755000795EC1 /* Et3amRestaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Et3amRestaurant.xcdatamodel; sourceTree = "<group>"; };
+		C75B9A742289755000795EC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C75B9A772289755000795EC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C75B9A792289755000795EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C75B9A7E2289755000795EC1 /* Et3amRestaurantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Et3amRestaurantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C75B9A822289755000795EC1 /* Et3amRestaurantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et3amRestaurantTests.swift; sourceTree = "<group>"; };
+		C75B9A842289755000795EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C75B9A892289755000795EC1 /* Et3amRestaurantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Et3amRestaurantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C75B9A8D2289755000795EC1 /* Et3amRestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et3amRestaurantUITests.swift; sourceTree = "<group>"; };
+		C75B9A8F2289755100795EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C75B9A642289755000795EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C75B9A7B2289755000795EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C75B9A862289755000795EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C75B9A5E2289755000795EC1 = {
+			isa = PBXGroup;
+			children = (
+				C75B9A692289755000795EC1 /* Et3amRestaurant */,
+				C75B9A812289755000795EC1 /* Et3amRestaurantTests */,
+				C75B9A8C2289755000795EC1 /* Et3amRestaurantUITests */,
+				C75B9A682289755000795EC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C75B9A682289755000795EC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C75B9A672289755000795EC1 /* Et3amRestaurant.app */,
+				C75B9A7E2289755000795EC1 /* Et3amRestaurantTests.xctest */,
+				C75B9A892289755000795EC1 /* Et3amRestaurantUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C75B9A692289755000795EC1 /* Et3amRestaurant */ = {
+			isa = PBXGroup;
+			children = (
+				C75B9A6A2289755000795EC1 /* AppDelegate.swift */,
+				C75B9A6C2289755000795EC1 /* ViewController.swift */,
+				C75B9A6E2289755000795EC1 /* Main.storyboard */,
+				C75B9A742289755000795EC1 /* Assets.xcassets */,
+				C75B9A762289755000795EC1 /* LaunchScreen.storyboard */,
+				C75B9A792289755000795EC1 /* Info.plist */,
+				C75B9A712289755000795EC1 /* Et3amRestaurant.xcdatamodeld */,
+			);
+			path = Et3amRestaurant;
+			sourceTree = "<group>";
+		};
+		C75B9A812289755000795EC1 /* Et3amRestaurantTests */ = {
+			isa = PBXGroup;
+			children = (
+				C75B9A822289755000795EC1 /* Et3amRestaurantTests.swift */,
+				C75B9A842289755000795EC1 /* Info.plist */,
+			);
+			path = Et3amRestaurantTests;
+			sourceTree = "<group>";
+		};
+		C75B9A8C2289755000795EC1 /* Et3amRestaurantUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C75B9A8D2289755000795EC1 /* Et3amRestaurantUITests.swift */,
+				C75B9A8F2289755100795EC1 /* Info.plist */,
+			);
+			path = Et3amRestaurantUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C75B9A662289755000795EC1 /* Et3amRestaurant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C75B9A922289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurant" */;
+			buildPhases = (
+				C75B9A632289755000795EC1 /* Sources */,
+				C75B9A642289755000795EC1 /* Frameworks */,
+				C75B9A652289755000795EC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Et3amRestaurant;
+			productName = Et3amRestaurant;
+			productReference = C75B9A672289755000795EC1 /* Et3amRestaurant.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C75B9A7D2289755000795EC1 /* Et3amRestaurantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C75B9A952289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurantTests" */;
+			buildPhases = (
+				C75B9A7A2289755000795EC1 /* Sources */,
+				C75B9A7B2289755000795EC1 /* Frameworks */,
+				C75B9A7C2289755000795EC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C75B9A802289755000795EC1 /* PBXTargetDependency */,
+			);
+			name = Et3amRestaurantTests;
+			productName = Et3amRestaurantTests;
+			productReference = C75B9A7E2289755000795EC1 /* Et3amRestaurantTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C75B9A882289755000795EC1 /* Et3amRestaurantUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C75B9A982289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurantUITests" */;
+			buildPhases = (
+				C75B9A852289755000795EC1 /* Sources */,
+				C75B9A862289755000795EC1 /* Frameworks */,
+				C75B9A872289755000795EC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C75B9A8B2289755000795EC1 /* PBXTargetDependency */,
+			);
+			name = Et3amRestaurantUITests;
+			productName = Et3amRestaurantUITests;
+			productReference = C75B9A892289755000795EC1 /* Et3amRestaurantUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C75B9A5F2289755000795EC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Jets39;
+				TargetAttributes = {
+					C75B9A662289755000795EC1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					C75B9A7D2289755000795EC1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C75B9A662289755000795EC1;
+					};
+					C75B9A882289755000795EC1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C75B9A662289755000795EC1;
+					};
+				};
+			};
+			buildConfigurationList = C75B9A622289755000795EC1 /* Build configuration list for PBXProject "Et3amRestaurant" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C75B9A5E2289755000795EC1;
+			productRefGroup = C75B9A682289755000795EC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C75B9A662289755000795EC1 /* Et3amRestaurant */,
+				C75B9A7D2289755000795EC1 /* Et3amRestaurantTests */,
+				C75B9A882289755000795EC1 /* Et3amRestaurantUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C75B9A652289755000795EC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75B9A782289755000795EC1 /* LaunchScreen.storyboard in Resources */,
+				C75B9A752289755000795EC1 /* Assets.xcassets in Resources */,
+				C75B9A702289755000795EC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C75B9A7C2289755000795EC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C75B9A872289755000795EC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C75B9A632289755000795EC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75B9A732289755000795EC1 /* Et3amRestaurant.xcdatamodeld in Sources */,
+				C75B9A6D2289755000795EC1 /* ViewController.swift in Sources */,
+				C75B9A6B2289755000795EC1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C75B9A7A2289755000795EC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75B9A832289755000795EC1 /* Et3amRestaurantTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C75B9A852289755000795EC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C75B9A8E2289755000795EC1 /* Et3amRestaurantUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C75B9A802289755000795EC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C75B9A662289755000795EC1 /* Et3amRestaurant */;
+			targetProxy = C75B9A7F2289755000795EC1 /* PBXContainerItemProxy */;
+		};
+		C75B9A8B2289755000795EC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C75B9A662289755000795EC1 /* Et3amRestaurant */;
+			targetProxy = C75B9A8A2289755000795EC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C75B9A6E2289755000795EC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C75B9A6F2289755000795EC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C75B9A762289755000795EC1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C75B9A772289755000795EC1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C75B9A902289755100795EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C75B9A912289755100795EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C75B9A932289755100795EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Et3amRestaurant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jets.Et3amRestaurant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C75B9A942289755100795EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Et3amRestaurant/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jets.Et3amRestaurant;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C75B9A962289755100795EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Et3amRestaurantTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jets.Et3amRestaurantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Et3amRestaurant.app/Et3amRestaurant";
+			};
+			name = Debug;
+		};
+		C75B9A972289755100795EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Et3amRestaurantTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jets.Et3amRestaurantTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Et3amRestaurant.app/Et3amRestaurant";
+			};
+			name = Release;
+		};
+		C75B9A992289755100795EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = Et3amRestaurantUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jets.Et3amRestaurantUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Et3amRestaurant;
+			};
+			name = Debug;
+		};
+		C75B9A9A2289755100795EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = Et3amRestaurantUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jets.Et3amRestaurantUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Et3amRestaurant;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C75B9A622289755000795EC1 /* Build configuration list for PBXProject "Et3amRestaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C75B9A902289755100795EC1 /* Debug */,
+				C75B9A912289755100795EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C75B9A922289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C75B9A932289755100795EC1 /* Debug */,
+				C75B9A942289755100795EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C75B9A952289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C75B9A962289755100795EC1 /* Debug */,
+				C75B9A972289755100795EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C75B9A982289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurantUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C75B9A992289755100795EC1 /* Debug */,
+				C75B9A9A2289755100795EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C75B9A712289755000795EC1 /* Et3amRestaurant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C75B9A722289755000795EC1 /* Et3amRestaurant.xcdatamodel */,
+			);
+			currentVersion = C75B9A722289755000795EC1 /* Et3amRestaurant.xcdatamodel */;
+			path = Et3amRestaurant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C75B9A5F2289755000795EC1 /* Project object */;
+}
