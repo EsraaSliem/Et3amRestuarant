@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C71423A6228A0F9E00D3DB1D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71423A5228A0F9E00D3DB1D /* LoginViewController.swift */; };
+		C71423A8228A2E6700D3DB1D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71423A7228A2E6700D3DB1D /* MenuViewController.swift */; };
+		C71594B6228CA2E90016126D /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71594B5228CA2E90016126D /* MealTableViewCell.swift */; };
+		C71594B8228CB42B0016126D /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71594B7228CB42B0016126D /* MealViewController.swift */; };
+		C71594BA228CCAC80016126D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71594B9228CCAC80016126D /* HistoryTableViewCell.swift */; };
+		C72366BC228AA7F000ED07BD /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = C72366BB228AA7F000ED07BD /* images.png */; };
+		C72366BE228AA9F600ED07BD /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366BD228AA9F600ED07BD /* ContainerViewController.swift */; };
+		C72366C0228AAA1300ED07BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366BF228AAA1300ED07BD /* HomeViewController.swift */; };
+		C72366C2228AB98A00ED07BD /* barButtonMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C72366C1228AB98A00ED07BD /* barButtonMenuIcon.png */; };
+		C72366C5228ACE5100ED07BD /* HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366C4228ACE5100ED07BD /* HomeControllerDelegate.swift */; };
+		C72366C8228AEF1C00ED07BD /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366C7228AEF1C00ED07BD /* MenuOptionCell.swift */; };
+		C72366CB228B068000ED07BD /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366CA228B068000ED07BD /* MenuOption.swift */; };
+		C723670B228C17B800ED07BD /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723670A228C17B800ED07BD /* Coupon.swift */; };
+		C723670D228C17CC00ED07BD /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C723670C228C17CC00ED07BD /* Meal.swift */; };
+		C759FF5C228C217E00F1DD41 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C759FF5B228C217E00F1DD41 /* VerificationViewController.swift */; };
 		C75B9A6B2289755000795EC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B9A6A2289755000795EC1 /* AppDelegate.swift */; };
 		C75B9A6D2289755000795EC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B9A6C2289755000795EC1 /* ViewController.swift */; };
 		C75B9A702289755000795EC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75B9A6E2289755000795EC1 /* Main.storyboard */; };
@@ -15,6 +30,7 @@
 		C75B9A782289755000795EC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75B9A762289755000795EC1 /* LaunchScreen.storyboard */; };
 		C75B9A832289755000795EC1 /* Et3amRestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B9A822289755000795EC1 /* Et3amRestaurantTests.swift */; };
 		C75B9A8E2289755000795EC1 /* Et3amRestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75B9A8D2289755000795EC1 /* Et3amRestaurantUITests.swift */; };
+		C7799B9B228C31B300FE3BF1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7799B9A228C31B300FE3BF1 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +51,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C71423A5228A0F9E00D3DB1D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Et3amRestaurant/LoginViewController.swift; sourceTree = "<group>"; };
+		C71423A7228A2E6700D3DB1D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C71594B5228CA2E90016126D /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		C71594B7228CB42B0016126D /* MealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
+		C71594B9228CCAC80016126D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		C72366BB228AA7F000ED07BD /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = images.png; path = ../../Documents/images.png; sourceTree = "<group>"; };
+		C72366BD228AA9F600ED07BD /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		C72366BF228AAA1300ED07BD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C72366C1228AB98A00ED07BD /* barButtonMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barButtonMenuIcon.png; path = ../../Downloads/barButtonMenuIcon.png; sourceTree = "<group>"; };
+		C72366C4228ACE5100ED07BD /* HomeControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeControllerDelegate.swift; sourceTree = "<group>"; };
+		C72366C7228AEF1C00ED07BD /* MenuOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
+		C72366CA228B068000ED07BD /* MenuOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		C723670A228C17B800ED07BD /* Coupon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		C723670C228C17CC00ED07BD /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		C759FF5B228C217E00F1DD41 /* VerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		C75B9A672289755000795EC1 /* Et3amRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Et3amRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75B9A6A2289755000795EC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C75B9A6C2289755000795EC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +80,7 @@
 		C75B9A892289755000795EC1 /* Et3amRestaurantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Et3amRestaurantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75B9A8D2289755000795EC1 /* Et3amRestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et3amRestaurantUITests.swift; sourceTree = "<group>"; };
 		C75B9A8F2289755100795EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7799B9A228C31B300FE3BF1 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +108,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C71423A4228A0EE200D3DB1D /* SettingsController.swift */ = {
+			isa = PBXGroup;
+			children = (
+				C71423A7228A2E6700D3DB1D /* MenuViewController.swift */,
+				C72366BD228AA9F600ED07BD /* ContainerViewController.swift */,
+				C72366BF228AAA1300ED07BD /* HomeViewController.swift */,
+				C72366C7228AEF1C00ED07BD /* MenuOptionCell.swift */,
+			);
+			name = SettingsController.swift;
+			sourceTree = "<group>";
+		};
+		C72366BA228AA7DA00ED07BD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C72366C1228AB98A00ED07BD /* barButtonMenuIcon.png */,
+				C72366BB228AA7F000ED07BD /* images.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C72366C3228ACDC500ED07BD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C72366C4228ACE5100ED07BD /* HomeControllerDelegate.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		C72366C9228B064D00ED07BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C72366CA228B068000ED07BD /* MenuOption.swift */,
+				C723670A228C17B800ED07BD /* Coupon.swift */,
+				C723670C228C17CC00ED07BD /* Meal.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C759FF5A228C205600F1DD41 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C71423A5228A0F9E00D3DB1D /* LoginViewController.swift */,
+				C759FF5B228C217E00F1DD41 /* VerificationViewController.swift */,
+				C7799B9A228C31B300FE3BF1 /* HistoryViewController.swift */,
+				C71594B5228CA2E90016126D /* MealTableViewCell.swift */,
+				C71594B7228CB42B0016126D /* MealViewController.swift */,
+				C71594B9228CCAC80016126D /* HistoryTableViewCell.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		C75B9A5E2289755000795EC1 = {
 			isa = PBXGroup;
 			children = (
+				C759FF5A228C205600F1DD41 /* Controllers */,
+				C72366C9228B064D00ED07BD /* Models */,
+				C72366C3228ACDC500ED07BD /* Utils */,
+				C72366BA228AA7DA00ED07BD /* Resources */,
+				C71423A4228A0EE200D3DB1D /* SettingsController.swift */,
 				C75B9A692289755000795EC1 /* Et3amRestaurant */,
 				C75B9A812289755000795EC1 /* Et3amRestaurantTests */,
 				C75B9A8C2289755000795EC1 /* Et3amRestaurantUITests */,
@@ -237,7 +325,9 @@
 			files = (
 				C75B9A782289755000795EC1 /* LaunchScreen.storyboard in Resources */,
 				C75B9A752289755000795EC1 /* Assets.xcassets in Resources */,
+				C72366C2228AB98A00ED07BD /* barButtonMenuIcon.png in Resources */,
 				C75B9A702289755000795EC1 /* Main.storyboard in Resources */,
+				C72366BC228AA7F000ED07BD /* images.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +352,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C759FF5C228C217E00F1DD41 /* VerificationViewController.swift in Sources */,
+				C71594B8228CB42B0016126D /* MealViewController.swift in Sources */,
+				C71423A6228A0F9E00D3DB1D /* LoginViewController.swift in Sources */,
+				C71423A8228A2E6700D3DB1D /* MenuViewController.swift in Sources */,
+				C72366C0228AAA1300ED07BD /* HomeViewController.swift in Sources */,
+				C71594B6228CA2E90016126D /* MealTableViewCell.swift in Sources */,
+				C72366CB228B068000ED07BD /* MenuOption.swift in Sources */,
+				C7799B9B228C31B300FE3BF1 /* HistoryViewController.swift in Sources */,
+				C723670D228C17CC00ED07BD /* Meal.swift in Sources */,
+				C71594BA228CCAC80016126D /* HistoryTableViewCell.swift in Sources */,
 				C75B9A732289755000795EC1 /* Et3amRestaurant.xcdatamodeld in Sources */,
+				C723670B228C17B800ED07BD /* Coupon.swift in Sources */,
+				C72366C8228AEF1C00ED07BD /* MenuOptionCell.swift in Sources */,
 				C75B9A6D2289755000795EC1 /* ViewController.swift in Sources */,
+				C72366BE228AA9F600ED07BD /* ContainerViewController.swift in Sources */,
 				C75B9A6B2289755000795EC1 /* AppDelegate.swift in Sources */,
+				C72366C5228ACE5100ED07BD /* HomeControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +613,7 @@
 				C75B9A942289755100795EC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C75B9A952289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurantTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +622,7 @@
 				C75B9A972289755100795EC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C75B9A982289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurantUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +631,7 @@
 				C75B9A9A2289755100795EC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
