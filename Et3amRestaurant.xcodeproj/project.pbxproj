@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C71423A6228A0F9E00D3DB1D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71423A5228A0F9E00D3DB1D /* LoginViewController.swift */; };
+		024F3461228F5314007249C8 /* Et3amRestaurantTests in Resources */ = {isa = PBXBuildFile; fileRef = 024F3460228F5314007249C8 /* Et3amRestaurantTests */; };
+		025DB0E4228E726D0090B714 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DB0E3228E726D0090B714 /* LoginViewController.swift */; };
+		025DB0E8228E76090090B714 /* Et3amRestaurantUITests in Resources */ = {isa = PBXBuildFile; fileRef = 025DB0E7228E76090090B714 /* Et3amRestaurantUITests */; };
+		58FA0EBB6932FA697332592D /* Pods_Et3amRestaurantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC1CEC95AD775155BF7DB11 /* Pods_Et3amRestaurantTests.framework */; };
+		B0833226E769AF5259AC0A41 /* Pods_Et3amRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA25622BA9D565E57580533C /* Pods_Et3amRestaurant.framework */; };
+		B15BB3118326BD00125744D8 /* Pods_Et3amRestaurantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53AC73527B6C79284470213 /* Pods_Et3amRestaurantUITests.framework */; };
 		C71423A8228A2E6700D3DB1D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71423A7228A2E6700D3DB1D /* MenuViewController.swift */; };
 		C71594B6228CA2E90016126D /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71594B5228CA2E90016126D /* MealTableViewCell.swift */; };
 		C71594B8228CB42B0016126D /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71594B7228CB42B0016126D /* MealViewController.swift */; };
 		C71594BA228CCAC80016126D /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71594B9228CCAC80016126D /* HistoryTableViewCell.swift */; };
-		C72366BC228AA7F000ED07BD /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = C72366BB228AA7F000ED07BD /* images.png */; };
 		C72366BE228AA9F600ED07BD /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366BD228AA9F600ED07BD /* ContainerViewController.swift */; };
 		C72366C0228AAA1300ED07BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366BF228AAA1300ED07BD /* HomeViewController.swift */; };
-		C72366C2228AB98A00ED07BD /* barButtonMenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C72366C1228AB98A00ED07BD /* barButtonMenuIcon.png */; };
 		C72366C5228ACE5100ED07BD /* HomeControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366C4228ACE5100ED07BD /* HomeControllerDelegate.swift */; };
 		C72366C8228AEF1C00ED07BD /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366C7228AEF1C00ED07BD /* MenuOptionCell.swift */; };
 		C72366CB228B068000ED07BD /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72366CA228B068000ED07BD /* MenuOption.swift */; };
@@ -51,15 +54,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C71423A5228A0F9E00D3DB1D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Et3amRestaurant/LoginViewController.swift; sourceTree = "<group>"; };
+		024F3460228F5314007249C8 /* Et3amRestaurantTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantTests; sourceTree = "<group>"; };
+		025DB0E3228E726D0090B714 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		025DB0E7228E76090090B714 /* Et3amRestaurantUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantUITests; sourceTree = "<group>"; };
+		1AFFBAF753EA0AF70A798384 /* Pods-Et3amRestaurantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Et3amRestaurantUITests.release.xcconfig"; path = "Target Support Files/Pods-Et3amRestaurantUITests/Pods-Et3amRestaurantUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3BCB4A938C6B31AE12870F6B /* Pods-Et3amRestaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Et3amRestaurant.debug.xcconfig"; path = "Target Support Files/Pods-Et3amRestaurant/Pods-Et3amRestaurant.debug.xcconfig"; sourceTree = "<group>"; };
+		3D8D6DB6AE45921167A10954 /* Pods-Et3amRestaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Et3amRestaurant.release.xcconfig"; path = "Target Support Files/Pods-Et3amRestaurant/Pods-Et3amRestaurant.release.xcconfig"; sourceTree = "<group>"; };
+		8EC1CEC95AD775155BF7DB11 /* Pods_Et3amRestaurantTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Et3amRestaurantTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1629646BC2DC2A2936BFCE9 /* Pods-Et3amRestaurantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Et3amRestaurantUITests.debug.xcconfig"; path = "Target Support Files/Pods-Et3amRestaurantUITests/Pods-Et3amRestaurantUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C71423A7228A2E6700D3DB1D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C71594B5228CA2E90016126D /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		C71594B7228CB42B0016126D /* MealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		C71594B9228CCAC80016126D /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
-		C72366BB228AA7F000ED07BD /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = images.png; path = ../../Documents/images.png; sourceTree = "<group>"; };
 		C72366BD228AA9F600ED07BD /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		C72366BF228AAA1300ED07BD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		C72366C1228AB98A00ED07BD /* barButtonMenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barButtonMenuIcon.png; path = ../../Downloads/barButtonMenuIcon.png; sourceTree = "<group>"; };
 		C72366C4228ACE5100ED07BD /* HomeControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeControllerDelegate.swift; sourceTree = "<group>"; };
 		C72366C7228AEF1C00ED07BD /* MenuOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		C72366CA228B068000ED07BD /* MenuOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
@@ -81,6 +89,10 @@
 		C75B9A8D2289755000795EC1 /* Et3amRestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Et3amRestaurantUITests.swift; sourceTree = "<group>"; };
 		C75B9A8F2289755100795EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7799B9A228C31B300FE3BF1 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		CA25622BA9D565E57580533C /* Pods_Et3amRestaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Et3amRestaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D26BA90A41ACD2BC500B6E90 /* Pods-Et3amRestaurantTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Et3amRestaurantTests.release.xcconfig"; path = "Target Support Files/Pods-Et3amRestaurantTests/Pods-Et3amRestaurantTests.release.xcconfig"; sourceTree = "<group>"; };
+		D53AC73527B6C79284470213 /* Pods_Et3amRestaurantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Et3amRestaurantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E31BC227CD895F62426A1608 /* Pods-Et3amRestaurantTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Et3amRestaurantTests.debug.xcconfig"; path = "Target Support Files/Pods-Et3amRestaurantTests/Pods-Et3amRestaurantTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0833226E769AF5259AC0A41 /* Pods_Et3amRestaurant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58FA0EBB6932FA697332592D /* Pods_Et3amRestaurantTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,12 +116,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15BB3118326BD00125744D8 /* Pods_Et3amRestaurantUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C192B1F9C4F3D0637C2344C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BCB4A938C6B31AE12870F6B /* Pods-Et3amRestaurant.debug.xcconfig */,
+				3D8D6DB6AE45921167A10954 /* Pods-Et3amRestaurant.release.xcconfig */,
+				E31BC227CD895F62426A1608 /* Pods-Et3amRestaurantTests.debug.xcconfig */,
+				D26BA90A41ACD2BC500B6E90 /* Pods-Et3amRestaurantTests.release.xcconfig */,
+				B1629646BC2DC2A2936BFCE9 /* Pods-Et3amRestaurantUITests.debug.xcconfig */,
+				1AFFBAF753EA0AF70A798384 /* Pods-Et3amRestaurantUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD237EE1B57EF833B5DA912E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA25622BA9D565E57580533C /* Pods_Et3amRestaurant.framework */,
+				8EC1CEC95AD775155BF7DB11 /* Pods_Et3amRestaurantTests.framework */,
+				D53AC73527B6C79284470213 /* Pods_Et3amRestaurantUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C71423A4228A0EE200D3DB1D /* SettingsController.swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,8 +160,6 @@
 		C72366BA228AA7DA00ED07BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C72366C1228AB98A00ED07BD /* barButtonMenuIcon.png */,
-				C72366BB228AA7F000ED07BD /* images.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -136,34 +172,34 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		C72366C9228B064D00ED07BD /* Models */ = {
+		C72366C9228B064D00ED07BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				C72366CA228B068000ED07BD /* MenuOption.swift */,
 				C723670A228C17B800ED07BD /* Coupon.swift */,
 				C723670C228C17CC00ED07BD /* Meal.swift */,
 			);
-			name = Models;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		C759FF5A228C205600F1DD41 /* Controllers */ = {
+		C759FF5A228C205600F1DD41 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C71423A5228A0F9E00D3DB1D /* LoginViewController.swift */,
 				C759FF5B228C217E00F1DD41 /* VerificationViewController.swift */,
 				C7799B9A228C31B300FE3BF1 /* HistoryViewController.swift */,
 				C71594B5228CA2E90016126D /* MealTableViewCell.swift */,
 				C71594B7228CB42B0016126D /* MealViewController.swift */,
 				C71594B9228CCAC80016126D /* HistoryTableViewCell.swift */,
+				025DB0E3228E726D0090B714 /* LoginViewController.swift */,
 			);
-			name = Controllers;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		C75B9A5E2289755000795EC1 = {
 			isa = PBXGroup;
 			children = (
-				C759FF5A228C205600F1DD41 /* Controllers */,
-				C72366C9228B064D00ED07BD /* Models */,
+				C759FF5A228C205600F1DD41 /* Controller */,
+				C72366C9228B064D00ED07BD /* Model */,
 				C72366C3228ACDC500ED07BD /* Utils */,
 				C72366BA228AA7DA00ED07BD /* Resources */,
 				C71423A4228A0EE200D3DB1D /* SettingsController.swift */,
@@ -171,6 +207,10 @@
 				C75B9A812289755000795EC1 /* Et3amRestaurantTests */,
 				C75B9A8C2289755000795EC1 /* Et3amRestaurantUITests */,
 				C75B9A682289755000795EC1 /* Products */,
+				024F3460228F5314007249C8 /* Et3amRestaurantTests */,
+				025DB0E7228E76090090B714 /* Et3amRestaurantUITests */,
+				3C192B1F9C4F3D0637C2344C /* Pods */,
+				BD237EE1B57EF833B5DA912E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C75B9A922289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurant" */;
 			buildPhases = (
+				F6F99B599C46A5FE452BFAA0 /* [CP] Check Pods Manifest.lock */,
 				C75B9A632289755000795EC1 /* Sources */,
 				C75B9A642289755000795EC1 /* Frameworks */,
 				C75B9A652289755000795EC1 /* Resources */,
+				B5646E9953D76FCD88DA0C39 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +282,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C75B9A952289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurantTests" */;
 			buildPhases = (
+				31F35AEE0CD834F6EB2AE2C4 /* [CP] Check Pods Manifest.lock */,
 				C75B9A7A2289755000795EC1 /* Sources */,
 				C75B9A7B2289755000795EC1 /* Frameworks */,
 				C75B9A7C2289755000795EC1 /* Resources */,
@@ -258,6 +301,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C75B9A982289755100795EC1 /* Build configuration list for PBXNativeTarget "Et3amRestaurantUITests" */;
 			buildPhases = (
+				DFB043F5D267E53F3011028A /* [CP] Check Pods Manifest.lock */,
 				C75B9A852289755000795EC1 /* Sources */,
 				C75B9A862289755000795EC1 /* Frameworks */,
 				C75B9A872289755000795EC1 /* Resources */,
@@ -324,10 +368,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75B9A782289755000795EC1 /* LaunchScreen.storyboard in Resources */,
+				024F3461228F5314007249C8 /* Et3amRestaurantTests in Resources */,
 				C75B9A752289755000795EC1 /* Assets.xcassets in Resources */,
-				C72366C2228AB98A00ED07BD /* barButtonMenuIcon.png in Resources */,
+				025DB0E8228E76090090B714 /* Et3amRestaurantUITests in Resources */,
 				C75B9A702289755000795EC1 /* Main.storyboard in Resources */,
-				C72366BC228AA7F000ED07BD /* images.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,14 +391,89 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31F35AEE0CD834F6EB2AE2C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Et3amRestaurantTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5646E9953D76FCD88DA0C39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Et3amRestaurant/Pods-Et3amRestaurant-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Et3amRestaurant/Pods-Et3amRestaurant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFB043F5D267E53F3011028A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Et3amRestaurantUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6F99B599C46A5FE452BFAA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Et3amRestaurant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C75B9A632289755000795EC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025DB0E4228E726D0090B714 /* LoginViewController.swift in Sources */,
 				C759FF5C228C217E00F1DD41 /* VerificationViewController.swift in Sources */,
 				C71594B8228CB42B0016126D /* MealViewController.swift in Sources */,
-				C71423A6228A0F9E00D3DB1D /* LoginViewController.swift in Sources */,
 				C71423A8228A2E6700D3DB1D /* MenuViewController.swift in Sources */,
 				C72366C0228AAA1300ED07BD /* HomeViewController.swift in Sources */,
 				C71594B6228CA2E90016126D /* MealTableViewCell.swift in Sources */,
@@ -518,6 +637,7 @@
 		};
 		C75B9A932289755100795EC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BCB4A938C6B31AE12870F6B /* Pods-Et3amRestaurant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Et3amRestaurant/Info.plist;
@@ -530,6 +650,7 @@
 		};
 		C75B9A942289755100795EC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D8D6DB6AE45921167A10954 /* Pods-Et3amRestaurant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Et3amRestaurant/Info.plist;
@@ -542,6 +663,7 @@
 		};
 		C75B9A962289755100795EC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E31BC227CD895F62426A1608 /* Pods-Et3amRestaurantTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -556,6 +678,7 @@
 		};
 		C75B9A972289755100795EC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D26BA90A41ACD2BC500B6E90 /* Pods-Et3amRestaurantTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -570,6 +693,7 @@
 		};
 		C75B9A992289755100795EC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1629646BC2DC2A2936BFCE9 /* Pods-Et3amRestaurantUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Et3amRestaurantUITests/Info.plist;
@@ -583,6 +707,7 @@
 		};
 		C75B9A9A2289755100795EC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AFFBAF753EA0AF70A798384 /* Pods-Et3amRestaurantUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Et3amRestaurantUITests/Info.plist;

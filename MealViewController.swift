@@ -26,7 +26,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: mealResuableIdentifier)! as! MealTableViewCell
-        cell.mealImageView?.image = #imageLiteral(resourceName: "images.png")
+
         cell.mealNameLabel?.text = "jhiho"
         cell.mealPriceLabel?.text = "50"
         

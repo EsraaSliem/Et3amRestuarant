@@ -60,8 +60,8 @@
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="login:" destination="zcZ-Dw-INo" eventType="touchDown" id="eJ9-OA-wz9"/>
-                                    <segue destination="1kJ-n2-uD1" kind="show" id="67L-1F-Q3D"/>
+                                    <action selector="login:" destination="zcZ-Dw-INo" eventType="touchUpInside" id="fqY-O5-e1g"/>
+                                    <segue destination="1kJ-n2-uD1" kind="show" identifier="loginSegue" id="WoC-dr-6vg"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-H6-7FJ">
@@ -96,7 +96,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="textFieldChange:" destination="zcZ-Dw-INo" eventType="editingDidEnd" id="GrY-k6-tGb"/>
+                                            <action selector="textFieldEditingChange:" destination="zcZ-Dw-INo" eventType="editingChanged" id="cp0-Wb-xtk"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Pass" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EhR-fD-jvT">
@@ -105,7 +105,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="textFieldChange:" destination="zcZ-Dw-INo" eventType="editingDidEnd" id="cdX-Du-lwE"/>
+                                            <action selector="textFieldEditingChange:" destination="zcZ-Dw-INo" eventType="editingDidEnd" id="TXh-YK-g3x"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -115,7 +115,7 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="90" id="wAw-Kg-iG3"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images.png" translatesAutoresizingMaskIntoConstraints="NO" id="Os5-96-clm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Os5-96-clm">
                                 <rect key="frame" x="69" y="100" width="182" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="cDk-pp-o6u"/>
@@ -144,10 +144,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="46j-Fv-TSR" id="zTe-Za-1ki"/>
-                        <outlet property="logoImageView" destination="Os5-96-clm" id="WdL-i9-mhh"/>
-                        <outlet property="nameTextField" destination="E5j-rE-d2w" id="Hgm-ft-Yvy"/>
-                        <outlet property="passwordTextField" destination="EhR-fD-jvT" id="zJq-JA-4tW"/>
+                        <outlet property="loginButton" destination="46j-Fv-TSR" id="5k6-Il-nLa"/>
+                        <outlet property="logoImageView" destination="Os5-96-clm" id="44I-AR-mmC"/>
+                        <outlet property="passwordTextField" destination="EhR-fD-jvT" id="E8n-Zf-tRZ"/>
+                        <outlet property="restaurnatNameTextField" destination="E5j-rE-d2w" id="hpQ-ci-z69"/>
                     </connections>
                 </viewController>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Name" textAlignment="natural" minimumFontSize="17" id="sDH-5G-JNX">
@@ -182,7 +182,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zr3-36-1Dl" id="tXz-Jb-LhL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BarCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9t-sM-QD8">
@@ -267,7 +267,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="264"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xia-Ca-e21" id="ITR-1O-3ba">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="263"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="264"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mx0-Mi-Ha2">
@@ -290,7 +290,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="zLH-AN-rKn"/>
                                                     </constraints>
                                                 </stackView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images.png" translatesAutoresizingMaskIntoConstraints="NO" id="1D4-7T-7aK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1D4-7T-7aK">
                                                     <rect key="frame" x="28" y="20" width="264" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="QQs-G8-2Z3"/>
@@ -446,7 +446,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images.png" translatesAutoresizingMaskIntoConstraints="NO" id="l3i-Om-5pO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l3i-Om-5pO">
                                 <rect key="frame" x="69" y="50" width="182" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="182" id="aEA-5Y-qrU"/>
@@ -456,7 +456,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OV0-qc-hkf">
                                 <rect key="frame" x="0.0" y="216" width="320" height="232"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="BarCode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xoy-4o-8af">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BarCode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xoy-4o-8af">
                                         <rect key="frame" x="35" y="30" width="250" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="YBg-2e-rVN"/>
@@ -475,7 +475,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ENk-Vh-hNg">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ENk-Vh-hNg">
                                         <rect key="frame" x="35" y="82" width="250" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="aPf-iH-FwH"/>
@@ -567,6 +567,5 @@
         <image name="approval" width="30" height="30"/>
         <image name="buy" width="30" height="30"/>
         <image name="icons8-food-48" width="24" height="24"/>
-        <image name="images.png" width="206" height="245"/>
     </resources>
 </document>

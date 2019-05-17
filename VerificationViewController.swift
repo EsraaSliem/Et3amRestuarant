@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class VerificationViewController: UIViewController {
 
     @IBOutlet weak var priceTextField: UITextField!
