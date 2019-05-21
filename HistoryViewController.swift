@@ -9,17 +9,18 @@
 import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+ // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     private let resuableIdentifier : String = "cell"
+     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
     }
-
-   
+    
+ // MARK: - Handler
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }

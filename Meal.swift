@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+struct Meal {
+    
+    var mealId: Int?
+    var name : String?
+    var price : Double?
+    var image : String?
+    
+}

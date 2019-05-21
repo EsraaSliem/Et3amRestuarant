@@ -9,10 +9,12 @@
 import UIKit
 import Alamofire
 class VerificationViewController: UIViewController {
-
+   // MARK: - Properties
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var barCodeTextField: UITextField!
     @IBOutlet weak var verifiedButton: UIButton!
+ 
+   // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         verifiedButton.layer.cornerRadius = 15
@@ -20,10 +22,7 @@ class VerificationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     
 
     /*

@@ -9,4 +9,8 @@
 import Foundation
 struct Coupon {
     
+    var couponId : Int?
+    var barCode : Int64?
+    var couponValue : Double?
+    
 }

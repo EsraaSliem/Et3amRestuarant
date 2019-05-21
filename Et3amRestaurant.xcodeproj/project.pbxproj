@@ -10,6 +10,11 @@
 		024F3461228F5314007249C8 /* Et3amRestaurantTests in Resources */ = {isa = PBXBuildFile; fileRef = 024F3460228F5314007249C8 /* Et3amRestaurantTests */; };
 		025DB0E4228E726D0090B714 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DB0E3228E726D0090B714 /* LoginViewController.swift */; };
 		025DB0E8228E76090090B714 /* Et3amRestaurantUITests in Resources */ = {isa = PBXBuildFile; fileRef = 025DB0E7228E76090090B714 /* Et3amRestaurantUITests */; };
+		029180E722907150002D3712 /* Et3amRestuarantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180E622907150002D3712 /* Et3amRestuarantAPI.swift */; };
+		029180E92290974E002D3712 /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180E82290974E002D3712 /* Resturant.swift */; };
+		029180EE22909BF2002D3712 /* ResturantDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180ED22909BF2002D3712 /* ResturantDAO.swift */; };
+		029180F022909C01002D3712 /* MealDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180EF22909C01002D3712 /* MealDAO.swift */; };
+		029180F222909C1A002D3712 /* CouponDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180F122909C1A002D3712 /* CouponDAO.swift */; };
 		58FA0EBB6932FA697332592D /* Pods_Et3amRestaurantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC1CEC95AD775155BF7DB11 /* Pods_Et3amRestaurantTests.framework */; };
 		B0833226E769AF5259AC0A41 /* Pods_Et3amRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA25622BA9D565E57580533C /* Pods_Et3amRestaurant.framework */; };
 		B15BB3118326BD00125744D8 /* Pods_Et3amRestaurantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D53AC73527B6C79284470213 /* Pods_Et3amRestaurantUITests.framework */; };
@@ -57,6 +62,11 @@
 		024F3460228F5314007249C8 /* Et3amRestaurantTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantTests; sourceTree = "<group>"; };
 		025DB0E3228E726D0090B714 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		025DB0E7228E76090090B714 /* Et3amRestaurantUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantUITests; sourceTree = "<group>"; };
+		029180E622907150002D3712 /* Et3amRestuarantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Et3amRestuarantAPI.swift; sourceTree = "<group>"; };
+		029180E82290974E002D3712 /* Resturant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
+		029180ED22909BF2002D3712 /* ResturantDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantDAO.swift; sourceTree = "<group>"; };
+		029180EF22909C01002D3712 /* MealDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDAO.swift; sourceTree = "<group>"; };
+		029180F122909C1A002D3712 /* CouponDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDAO.swift; sourceTree = "<group>"; };
 		1AFFBAF753EA0AF70A798384 /* Pods-Et3amRestaurantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Et3amRestaurantUITests.release.xcconfig"; path = "Target Support Files/Pods-Et3amRestaurantUITests/Pods-Et3amRestaurantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3BCB4A938C6B31AE12870F6B /* Pods-Et3amRestaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Et3amRestaurant.debug.xcconfig"; path = "Target Support Files/Pods-Et3amRestaurant/Pods-Et3amRestaurant.debug.xcconfig"; sourceTree = "<group>"; };
 		3D8D6DB6AE45921167A10954 /* Pods-Et3amRestaurant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Et3amRestaurant.release.xcconfig"; path = "Target Support Files/Pods-Et3amRestaurant/Pods-Et3amRestaurant.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,7 +86,7 @@
 		C759FF5B228C217E00F1DD41 /* VerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
 		C75B9A672289755000795EC1 /* Et3amRestaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Et3amRestaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75B9A6A2289755000795EC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C75B9A6C2289755000795EC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C75B9A6C2289755000795EC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Et3amRestaurant/ViewController.swift; sourceTree = "<group>"; };
 		C75B9A6F2289755000795EC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C75B9A722289755000795EC1 /* Et3amRestaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Et3amRestaurant.xcdatamodel; sourceTree = "<group>"; };
 		C75B9A742289755000795EC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +133,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0217BFBC22933AE4004235C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C75B9A6E2289755000795EC1 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		029180EA22909BA4002D3712 /* Pojo */ = {
+			isa = PBXGroup;
+			children = (
+				C723670A228C17B800ED07BD /* Coupon.swift */,
+				C723670C228C17CC00ED07BD /* Meal.swift */,
+				029180E82290974E002D3712 /* Resturant.swift */,
+			);
+			name = Pojo;
+			sourceTree = "<group>";
+		};
+		029180EB22909BCB002D3712 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				029180ED22909BF2002D3712 /* ResturantDAO.swift */,
+				029180EF22909C01002D3712 /* MealDAO.swift */,
+				029180F122909C1A002D3712 /* CouponDAO.swift */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
 		3C192B1F9C4F3D0637C2344C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				C72366C4228ACE5100ED07BD /* HomeControllerDelegate.swift */,
+				029180E622907150002D3712 /* Et3amRestuarantAPI.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -175,9 +214,9 @@
 		C72366C9228B064D00ED07BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				029180EB22909BCB002D3712 /* DAO */,
+				029180EA22909BA4002D3712 /* Pojo */,
 				C72366CA228B068000ED07BD /* MenuOption.swift */,
-				C723670A228C17B800ED07BD /* Coupon.swift */,
-				C723670C228C17CC00ED07BD /* Meal.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -185,6 +224,7 @@
 		C759FF5A228C205600F1DD41 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C75B9A6C2289755000795EC1 /* ViewController.swift */,
 				C759FF5B228C217E00F1DD41 /* VerificationViewController.swift */,
 				C7799B9A228C31B300FE3BF1 /* HistoryViewController.swift */,
 				C71594B5228CA2E90016126D /* MealTableViewCell.swift */,
@@ -198,6 +238,7 @@
 		C75B9A5E2289755000795EC1 = {
 			isa = PBXGroup;
 			children = (
+				0217BFBC22933AE4004235C5 /* View */,
 				C759FF5A228C205600F1DD41 /* Controller */,
 				C72366C9228B064D00ED07BD /* Model */,
 				C72366C3228ACDC500ED07BD /* Utils */,
@@ -228,8 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				C75B9A6A2289755000795EC1 /* AppDelegate.swift */,
-				C75B9A6C2289755000795EC1 /* ViewController.swift */,
-				C75B9A6E2289755000795EC1 /* Main.storyboard */,
 				C75B9A742289755000795EC1 /* Assets.xcassets */,
 				C75B9A762289755000795EC1 /* LaunchScreen.storyboard */,
 				C75B9A792289755000795EC1 /* Info.plist */,
@@ -471,12 +510,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029180F022909C01002D3712 /* MealDAO.swift in Sources */,
+				029180E92290974E002D3712 /* Resturant.swift in Sources */,
 				025DB0E4228E726D0090B714 /* LoginViewController.swift in Sources */,
+				029180E722907150002D3712 /* Et3amRestuarantAPI.swift in Sources */,
 				C759FF5C228C217E00F1DD41 /* VerificationViewController.swift in Sources */,
 				C71594B8228CB42B0016126D /* MealViewController.swift in Sources */,
+				029180EE22909BF2002D3712 /* ResturantDAO.swift in Sources */,
 				C71423A8228A2E6700D3DB1D /* MenuViewController.swift in Sources */,
 				C72366C0228AAA1300ED07BD /* HomeViewController.swift in Sources */,
 				C71594B6228CA2E90016126D /* MealTableViewCell.swift in Sources */,
+				029180F222909C1A002D3712 /* CouponDAO.swift in Sources */,
 				C72366CB228B068000ED07BD /* MenuOption.swift in Sources */,
 				C7799B9B228C31B300FE3BF1 /* HistoryViewController.swift in Sources */,
 				C723670D228C17CC00ED07BD /* Meal.swift in Sources */,
@@ -529,6 +573,7 @@
 				C75B9A6F2289755000795EC1 /* Base */,
 			);
 			name = Main.storyboard;
+			path = Et3amRestaurant;
 			sourceTree = "<group>";
 		};
 		C75B9A762289755000795EC1 /* LaunchScreen.storyboard */ = {
