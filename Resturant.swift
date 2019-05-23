@@ -12,6 +12,9 @@ struct Resturant {
     var restaurantId : Int?
     var email : String?
     var pass : String?
+    var name : String?
+    var image : String?
+
     
     
 }

@@ -10,10 +10,16 @@ import UIKit
 import Alamofire
 class VerificationViewController: UIViewController {
    // MARK: - Properties
-    @IBOutlet weak var priceTextField: UITextField!
+
     @IBOutlet weak var barCodeTextField: UITextField!
-    @IBOutlet weak var verifiedButton: UIButton!
- 
+    @IBAction func close(_ sender: Any) {
+    alertView.isHidden = true
+    }
+    @IBAction func doneButton(_ sender: UIButton) {
+    }
+    @IBOutlet weak var priceTextField: UITextField!
+  
+    @IBOutlet weak var alertView: UIView!
    // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +28,12 @@ class VerificationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var verifiedButton: UIButton!
     
     
+    @IBAction func Verification(_ sender: Any) {
+        alertView.isHidden = false
+    }
 
     /*
     // MARK: - Navigation

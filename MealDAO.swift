@@ -10,35 +10,30 @@ import Foundation
 import Alamofire
 class MealDAO {
     
-    static var meals : Array<Meal> = []
-    public  static func getMeals( resturantId : String ) -> Array<Meal>
+    
+    
+    
+    
+    //    var meal : Meal
+    
+    static func addMeal( parameters : [String:Any] ,restaurantId :Int) -> Int
         
     {
-        let url : String = Et3amRestuarantAPI.baseURL+String(resturantId)+MealURLs.allMeals.rawValue
-        Alamofire.request(url).responseJSON {
+        var code = 0
+        Alamofire.request(Et3amRestuarantAPI.mealBaseURL + String(restaurantId) + MealURLs.addMeal.rawValue,
+                          method: .post,
+                          parameters: parameters,
+                          encoding: JSONEncoding.default,
+                          headers: nil).responseJSON {
                             response in
                             switch response.result {
+                           
                             case .success:
-                                do{
-                                    
-                                let data = response.data
-                                    let json = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
-                                    
-                                let results =  json["restaurant"] as! Array< NSDictionary >
-                                    
-                                    for i in results
-                                    {
-                                        var meal : Meal = Meal()
-                                        meal.mealId = i["mealId"] as?  Int
-                                        meal.price = i["mealValue"] as?  Double
-                                        meal.image = i["mealImage"] as?  String
-                                        self.meals.append(meal)
-         
-                                    }
-                               
-                                } catch{
-                                    print(error)
-                                }
+                                print("enter")
+                                let sucessDataValue = response.result.value
+                                let returnedData = sucessDataValue as! NSDictionary
+                                print(returnedData)
+                                code = (returnedData["code"] as? Int)!
                                 break
                             case .failure(let error):
                                 print(error)
@@ -46,13 +41,13 @@ class MealDAO {
                             }
                             
         }
-        return meals
-  
+        return code
+        
         
     }
     
     
-
 }
+
 
 

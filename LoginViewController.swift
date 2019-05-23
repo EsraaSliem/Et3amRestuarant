@@ -9,15 +9,15 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-     // MARK: - Properties
-@IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var restaurnatNameTextField: UITextField!
+    // MARK: - Properties
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var restaurnatEmailTextFie: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
     
     
-     // MARK: - Init
+    // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,27 +28,30 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-     // MARK: - Handler
-
+    
+    // MARK: - Handler
+    
     @IBAction func login(_ sender: Any) {
-        let restaurant : Resturant = ResturantDAO.login(email: restaurnatNameTextField.text!, pass:passwordTextField.text!)
-        if  restaurant != nil
-        {
-            
-              UserDefaults.standard.set(restaurant.email, forKey: "restaurantAdminEmail")
-              UserDefaults.standard.set(restaurant.pass, forKey: "restaurantAdminPass")
-              UserDefaults.standard.set(restaurant.restaurantId, forKey: "restaurantAdminId")
-              self.performSegue(withIdentifier: "loginSegue", sender: nil)
-        }
+        
+        let code :Int  = ResturantDAO.login(email: restaurnatEmailTextFie.text!, pass:passwordTextField.text!)
         
        
+        if  (code == 1)
+        {
+
+         print("enter")
+            //self.performSegue(withIdentifier: "loginSegue", sender: nil)
+        }
+        
+        
+        
     }
     @IBAction func textFieldEditingChange(_ sender: UITextField) {
         print(sender.text!)
-        if !(restaurnatNameTextField.text?.isEmpty)! && !(passwordTextField.text?.isEmpty)!
+        if !(restaurnatEmailTextFie.text?.isEmpty)! && !(passwordTextField.text?.isEmpty)!
         {
-         loginButton.isEnabled = true
-           
+            loginButton.isEnabled = true
+            
         }
         else
         {
@@ -56,15 +59,15 @@ class LoginViewController: UIViewController {
         }
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

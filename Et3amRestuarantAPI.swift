@@ -9,11 +9,9 @@
 import Foundation
 struct Et3amRestuarantAPI {
     
-    static let baseURL : String = "https://et3am.herokuapp.com/restaurant/"
-    
+    static let restaurantBaseURL : String = "https://et3am.herokuapp.com/restaurant/"
+    static let mealBaseURL : String = "https://et3am.herokuapp.com/restaurant/rest/"
 }
-
-
 
 
 
@@ -23,14 +21,14 @@ struct Et3amRestuarantAPI {
 enum MealURLs: String
 {
     case  allMeals = "/meals"
-    
+    case  addMeal = "/addMeal"
 }
 
 
 
 enum RestaurantURLs: String
 {
-    case loginURL = "/validate/login"
+    case loginURL = "validate/login"
     
 }
 

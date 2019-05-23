@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		024F3461228F5314007249C8 /* Et3amRestaurantTests in Resources */ = {isa = PBXBuildFile; fileRef = 024F3460228F5314007249C8 /* Et3amRestaurantTests */; };
+		0255B5932295F61600853B20 /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255B5922295F61600853B20 /* AddMealViewController.swift */; };
 		025DB0E4228E726D0090B714 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DB0E3228E726D0090B714 /* LoginViewController.swift */; };
 		025DB0E8228E76090090B714 /* Et3amRestaurantUITests in Resources */ = {isa = PBXBuildFile; fileRef = 025DB0E7228E76090090B714 /* Et3amRestaurantUITests */; };
 		029180E722907150002D3712 /* Et3amRestuarantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180E622907150002D3712 /* Et3amRestuarantAPI.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		024F3460228F5314007249C8 /* Et3amRestaurantTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantTests; sourceTree = "<group>"; };
+		0255B5922295F61600853B20 /* AddMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
 		025DB0E3228E726D0090B714 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		025DB0E7228E76090090B714 /* Et3amRestaurantUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantUITests; sourceTree = "<group>"; };
 		029180E622907150002D3712 /* Et3amRestuarantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Et3amRestuarantAPI.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				C71594B7228CB42B0016126D /* MealViewController.swift */,
 				C71594B9228CCAC80016126D /* HistoryTableViewCell.swift */,
 				025DB0E3228E726D0090B714 /* LoginViewController.swift */,
+				0255B5922295F61600853B20 /* AddMealViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				C72366C8228AEF1C00ED07BD /* MenuOptionCell.swift in Sources */,
 				C75B9A6D2289755000795EC1 /* ViewController.swift in Sources */,
 				C72366BE228AA9F600ED07BD /* ContainerViewController.swift in Sources */,
+				0255B5932295F61600853B20 /* AddMealViewController.swift in Sources */,
 				C75B9A6B2289755000795EC1 /* AppDelegate.swift in Sources */,
 				C72366C5228ACE5100ED07BD /* HomeControllerDelegate.swift in Sources */,
 			);
