@@ -14,14 +14,12 @@ struct Et3amRestuarantAPI {
 }
 
 
-
-
-
-
 enum MealURLs: String
 {
     case  allMeals = "/meals"
     case  addMeal = "/addMeal"
+    case removeMeal = "/deleteMeal/"
+    case updateMeal = "/updateMeal/"
 }
 
 

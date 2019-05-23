@@ -11,28 +11,28 @@ import Alamofire
 
 class MealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
- // MARK: - Properties
+    // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     private let mealResuableIdentifier : String = "cell2"
     var meals : Array<Meal> = []
     var restaurantId :Int?
-     // MARK: - Init
+    // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         restaurantId = UserDefaults.standard.integer(forKey: "restaurantAdminId")
         print(restaurantId!)
-         getMeals(resturantId:restaurantId!)
+        getMeals(resturantId:restaurantId!)
         
-      //  print("count : \(meals.count)")
-       // tableView.reloadData()
+        //  print("count : \(meals.count)")
+        // tableView.reloadData()
         
     }
-  
-
     
-     // MARK: - Handler
+    
+    
+    // MARK: - Handler
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("count : \(meals.count)")
         return meals.count
@@ -40,7 +40,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: mealResuableIdentifier)! as! MealTableViewCell
         //cell.imageView?.image = UIImage(named: meals[indexPath.row].image!)
-     
+        
         cell.mealNameLabel?.text = meals[indexPath.row].name
         print(meals[indexPath.row].name!)
         cell.mealPriceLabel?.text = String( describing: meals[indexPath.row].price!)
@@ -48,18 +48,20 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
         
     }
+    
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            MealDAO.deleteMeal(rest_id: 1, meal_id: meals[indexPath.row].mealId!)
             meals.remove(at: indexPath.row)
-            
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     public   func getMeals( resturantId : Int )
         
     {
-   //     var meals : Array<Meal> = []
+        //     var meals : Array<Meal> = []
         let url : String = Et3amRestuarantAPI.restaurantBaseURL+String(resturantId)+MealURLs.allMeals.rawValue
         Alamofire.request(url).responseJSON {
             response in
@@ -96,8 +98,14 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
         }
-
+        
         
     }
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let updateViewController = self.storyboard?.instantiateViewController(withIdentifier: "updateMeal") as! UpdateMealViewController
+        updateViewController.meal = meals[indexPath.row]
+        self.navigationController?.pushViewController(updateViewController, animated: true)
+        
+    }
+    
 }

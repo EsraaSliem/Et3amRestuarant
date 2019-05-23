@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		024F3461228F5314007249C8 /* Et3amRestaurantTests in Resources */ = {isa = PBXBuildFile; fileRef = 024F3460228F5314007249C8 /* Et3amRestaurantTests */; };
 		0255B5932295F61600853B20 /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255B5922295F61600853B20 /* AddMealViewController.swift */; };
+		0255B597229636F300853B20 /* MealDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255B596229636F300853B20 /* MealDelegate.swift */; };
+		0255B599229641E800853B20 /* UpdateMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255B598229641E800853B20 /* UpdateMealViewController.swift */; };
 		025DB0E4228E726D0090B714 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DB0E3228E726D0090B714 /* LoginViewController.swift */; };
 		025DB0E8228E76090090B714 /* Et3amRestaurantUITests in Resources */ = {isa = PBXBuildFile; fileRef = 025DB0E7228E76090090B714 /* Et3amRestaurantUITests */; };
 		029180E722907150002D3712 /* Et3amRestuarantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180E622907150002D3712 /* Et3amRestuarantAPI.swift */; };
@@ -62,6 +64,8 @@
 /* Begin PBXFileReference section */
 		024F3460228F5314007249C8 /* Et3amRestaurantTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantTests; sourceTree = "<group>"; };
 		0255B5922295F61600853B20 /* AddMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
+		0255B596229636F300853B20 /* MealDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDelegate.swift; sourceTree = "<group>"; };
+		0255B598229641E800853B20 /* UpdateMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateMealViewController.swift; sourceTree = "<group>"; };
 		025DB0E3228E726D0090B714 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		025DB0E7228E76090090B714 /* Et3amRestaurantUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantUITests; sourceTree = "<group>"; };
 		029180E622907150002D3712 /* Et3amRestuarantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Et3amRestuarantAPI.swift; sourceTree = "<group>"; };
@@ -141,6 +145,14 @@
 				C75B9A6E2289755000795EC1 /* Main.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		0255B595229636C700853B20 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0255B596229636F300853B20 /* MealDelegate.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 		029180EA22909BA4002D3712 /* Pojo */ = {
@@ -234,6 +246,7 @@
 				C71594B9228CCAC80016126D /* HistoryTableViewCell.swift */,
 				025DB0E3228E726D0090B714 /* LoginViewController.swift */,
 				0255B5922295F61600853B20 /* AddMealViewController.swift */,
+				0255B598229641E800853B20 /* UpdateMealViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,6 +254,7 @@
 		C75B9A5E2289755000795EC1 = {
 			isa = PBXGroup;
 			children = (
+				0255B595229636C700853B20 /* Protocol */,
 				0217BFBC22933AE4004235C5 /* View */,
 				C759FF5A228C205600F1DD41 /* Controller */,
 				C72366C9228B064D00ED07BD /* Model */,
@@ -518,8 +532,10 @@
 				025DB0E4228E726D0090B714 /* LoginViewController.swift in Sources */,
 				029180E722907150002D3712 /* Et3amRestuarantAPI.swift in Sources */,
 				C759FF5C228C217E00F1DD41 /* VerificationViewController.swift in Sources */,
+				0255B599229641E800853B20 /* UpdateMealViewController.swift in Sources */,
 				C71594B8228CB42B0016126D /* MealViewController.swift in Sources */,
 				029180EE22909BF2002D3712 /* ResturantDAO.swift in Sources */,
+				0255B597229636F300853B20 /* MealDelegate.swift in Sources */,
 				C71423A8228A2E6700D3DB1D /* MenuViewController.swift in Sources */,
 				C72366C0228AAA1300ED07BD /* HomeViewController.swift in Sources */,
 				C71594B6228CA2E90016126D /* MealTableViewCell.swift in Sources */,

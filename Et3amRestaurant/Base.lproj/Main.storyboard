@@ -619,6 +619,98 @@
             </objects>
             <point key="canvasLocation" x="3510" y="-50"/>
         </scene>
+        <!--Update Meal View Controller-->
+        <scene sceneID="7Hi-g2-wpW">
+            <objects>
+                <viewController storyboardIdentifier="updateMeal" id="ObY-4k-vJh" customClass="UpdateMealViewController" customModule="Et3amRestaurant" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yh0-Fn-q1L"/>
+                        <viewControllerLayoutGuide type="bottom" id="RN2-dZ-jap"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pgg-p6-A3p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuO-qe-Xx8">
+                                <rect key="frame" x="16" y="56" width="288" height="367"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="unh-SX-Bp0">
+                                        <rect key="frame" x="24" y="25" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="Wkz-yS-CeY"/>
+                                            <constraint firstAttribute="height" constant="128" id="iy0-UK-8L8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U5-mc-EUg">
+                                        <rect key="frame" x="213" y="159" width="51" height="30"/>
+                                        <state key="normal" title="change"/>
+                                        <connections>
+                                            <action selector="changeImage:" destination="ObY-4k-vJh" eventType="touchUpInside" id="pfV-TU-dMN"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="flS-wj-QQh">
+                                        <rect key="frame" x="35" y="228" width="218" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vzA-Lo-jea">
+                                        <rect key="frame" x="35" y="281" width="218" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntv-jz-hZe">
+                                        <rect key="frame" x="30" y="346" width="228" height="34"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="hr5-7l-k8Z"/>
+                                        </constraints>
+                                        <state key="normal" title="Update">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateMeal:" destination="ObY-4k-vJh" eventType="touchUpInside" id="XGy-Uo-x5S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ntv-jz-hZe" firstAttribute="centerX" secondItem="ZuO-qe-Xx8" secondAttribute="centerX" id="1ft-V7-BbF"/>
+                                    <constraint firstItem="1U5-mc-EUg" firstAttribute="trailing" secondItem="unh-SX-Bp0" secondAttribute="trailing" id="6Cg-uW-ul1"/>
+                                    <constraint firstItem="vzA-Lo-jea" firstAttribute="top" secondItem="flS-wj-QQh" secondAttribute="bottom" constant="23" id="8OR-oe-N4h"/>
+                                    <constraint firstItem="flS-wj-QQh" firstAttribute="top" secondItem="1U5-mc-EUg" secondAttribute="bottom" constant="39" id="Gxv-3c-iXS"/>
+                                    <constraint firstItem="flS-wj-QQh" firstAttribute="trailing" secondItem="vzA-Lo-jea" secondAttribute="trailing" id="HFK-VS-J3w"/>
+                                    <constraint firstItem="flS-wj-QQh" firstAttribute="centerX" secondItem="unh-SX-Bp0" secondAttribute="centerX" id="Kkf-hF-wjm"/>
+                                    <constraint firstItem="flS-wj-QQh" firstAttribute="leading" secondItem="ZuO-qe-Xx8" secondAttribute="leading" constant="35" id="QsD-ZJ-oWT"/>
+                                    <constraint firstItem="unh-SX-Bp0" firstAttribute="top" secondItem="ZuO-qe-Xx8" secondAttribute="top" constant="25" id="Sw3-hR-x5y"/>
+                                    <constraint firstItem="Ntv-jz-hZe" firstAttribute="top" secondItem="vzA-Lo-jea" secondAttribute="bottom" constant="35" id="UAk-Hs-qnI"/>
+                                    <constraint firstAttribute="bottom" secondItem="1U5-mc-EUg" secondAttribute="bottom" constant="266" id="URc-rm-qoQ"/>
+                                    <constraint firstItem="Ntv-jz-hZe" firstAttribute="leading" secondItem="ZuO-qe-Xx8" secondAttribute="leading" constant="30" id="dGj-lc-9Tp"/>
+                                    <constraint firstItem="unh-SX-Bp0" firstAttribute="centerX" secondItem="ZuO-qe-Xx8" secondAttribute="centerX" id="gF6-gJ-Efh"/>
+                                    <constraint firstItem="1U5-mc-EUg" firstAttribute="top" secondItem="ZuO-qe-Xx8" secondAttribute="top" constant="159" id="iHn-eS-k3h"/>
+                                    <constraint firstItem="flS-wj-QQh" firstAttribute="leading" secondItem="vzA-Lo-jea" secondAttribute="leading" id="k3O-cP-8mW"/>
+                                    <constraint firstAttribute="trailing" secondItem="1U5-mc-EUg" secondAttribute="trailing" constant="24" id="xpB-O7-9O7"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZuO-qe-Xx8" firstAttribute="top" secondItem="Yh0-Fn-q1L" secondAttribute="bottom" id="8eI-2d-UCN"/>
+                            <constraint firstItem="ZuO-qe-Xx8" firstAttribute="trailing" secondItem="Pgg-p6-A3p" secondAttribute="trailingMargin" id="GSs-yF-k8V"/>
+                            <constraint firstItem="ZuO-qe-Xx8" firstAttribute="leading" secondItem="Pgg-p6-A3p" secondAttribute="leadingMargin" id="XhI-oz-zTY"/>
+                            <constraint firstItem="RN2-dZ-jap" firstAttribute="top" secondItem="ZuO-qe-Xx8" secondAttribute="bottom" id="chd-Th-T3m"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mealImage" destination="unh-SX-Bp0" id="jMw-EI-WKd"/>
+                        <outlet property="mealName" destination="flS-wj-QQh" id="gr3-Kz-mjP"/>
+                        <outlet property="priceTextField" destination="vzA-Lo-jea" id="Xpi-QI-eXi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uu5-7c-x0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4886" y="635"/>
+        </scene>
     </scenes>
     <resources>
         <image name="approval" width="30" height="30"/>
