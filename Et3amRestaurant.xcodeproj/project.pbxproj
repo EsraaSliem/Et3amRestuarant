@@ -13,6 +13,7 @@
 		0255B599229641E800853B20 /* UpdateMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255B598229641E800853B20 /* UpdateMealViewController.swift */; };
 		025DB0E4228E726D0090B714 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025DB0E3228E726D0090B714 /* LoginViewController.swift */; };
 		025DB0E8228E76090090B714 /* Et3amRestaurantUITests in Resources */ = {isa = PBXBuildFile; fileRef = 025DB0E7228E76090090B714 /* Et3amRestaurantUITests */; };
+		02677B582296A67B00CC4845 /* UpdateMealDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02677B572296A67B00CC4845 /* UpdateMealDelegate.swift */; };
 		029180E722907150002D3712 /* Et3amRestuarantAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180E622907150002D3712 /* Et3amRestuarantAPI.swift */; };
 		029180E92290974E002D3712 /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180E82290974E002D3712 /* Resturant.swift */; };
 		029180EE22909BF2002D3712 /* ResturantDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180ED22909BF2002D3712 /* ResturantDAO.swift */; };
@@ -68,6 +69,7 @@
 		0255B598229641E800853B20 /* UpdateMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateMealViewController.swift; sourceTree = "<group>"; };
 		025DB0E3228E726D0090B714 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		025DB0E7228E76090090B714 /* Et3amRestaurantUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantUITests; sourceTree = "<group>"; };
+		02677B572296A67B00CC4845 /* UpdateMealDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateMealDelegate.swift; sourceTree = "<group>"; };
 		029180E622907150002D3712 /* Et3amRestuarantAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Et3amRestuarantAPI.swift; sourceTree = "<group>"; };
 		029180E82290974E002D3712 /* Resturant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
 		029180ED22909BF2002D3712 /* ResturantDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantDAO.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				0255B596229636F300853B20 /* MealDelegate.swift */,
+				02677B572296A67B00CC4845 /* UpdateMealDelegate.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				C75B9A6D2289755000795EC1 /* ViewController.swift in Sources */,
 				C72366BE228AA9F600ED07BD /* ContainerViewController.swift in Sources */,
 				0255B5932295F61600853B20 /* AddMealViewController.swift in Sources */,
+				02677B582296A67B00CC4845 /* UpdateMealDelegate.swift in Sources */,
 				C75B9A6B2289755000795EC1 /* AppDelegate.swift in Sources */,
 				C72366C5228ACE5100ED07BD /* HomeControllerDelegate.swift in Sources */,
 			);

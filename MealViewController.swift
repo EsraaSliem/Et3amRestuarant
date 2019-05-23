@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class MealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,MealDelegate ,UpdateMealDelegate {
     
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
@@ -23,14 +23,37 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         restaurantId = UserDefaults.standard.integer(forKey: "restaurantAdminId")
         print(restaurantId!)
-        getMeals(resturantId:restaurantId!)
+        MealDAO.getMeals(resturantId: restaurantId! ){
+            (mealList) in
+            
+            DispatchQueue.main.async {
+                self.meals = mealList
+                self.tableView.reloadData()
+            }
+        }
         
         //  print("count : \(meals.count)")
         // tableView.reloadData()
         
     }
-    
-    
+    func addMeal() {
+        
+        self.tableView.reloadData()
+    }
+    func updateMeal(updatedMeal :Meal)
+    {
+        for i in 0..<meals.count
+        {
+            if updatedMeal.mealId == meals[i].mealId
+            {
+                meals[i].image = updatedMeal.image
+                meals[i].name = updatedMeal.name
+                meals[i].price = updatedMeal.price
+                tableView.reloadData()
+                break
+            }
+        }
+    }
     
     // MARK: - Handler
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,52 +81,11 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    public   func getMeals( resturantId : Int )
-        
-    {
-        //     var meals : Array<Meal> = []
-        let url : String = Et3amRestuarantAPI.restaurantBaseURL+String(resturantId)+MealURLs.allMeals.rawValue
-        Alamofire.request(url).responseJSON {
-            response in
-            switch response.result {
-            case .success:
-                do{
-                    
-                    let data = response.data
-                    let json = try JSONSerialization.jsonObject(with: data!, options: []) as! Array<NSDictionary>
-                    print(json)
-                    //  let results =  json["restaurant"] as! Array< NSDictionary >
-                    
-                    for i in json
-                    {
-                        var meal : Meal = Meal()
-                        meal.mealId = i["mealId"] as?  Int
-                        print(meal.mealId! )
-                        meal.name = i["mealName"] as?  String
-                        meal.price = i["mealValue"] as?  Double
-                        meal.image = i["mealImage"] as?  String
-                        print(meal.name)
-                        self.meals.append(meal)
-                        
-                    }
-                    self.tableView.reloadData()
-                } catch
-                {
-                    print(error)
-                }
-                break
-            case .failure(let error):
-                print(error)
-                
-            }
-            
-        }
-        
-        
-    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let updateViewController = self.storyboard?.instantiateViewController(withIdentifier: "updateMeal") as! UpdateMealViewController
         updateViewController.meal = meals[indexPath.row]
+        updateViewController.delegate = self
         self.navigationController?.pushViewController(updateViewController, animated: true)
         
     }

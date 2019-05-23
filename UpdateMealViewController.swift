@@ -15,6 +15,7 @@ class UpdateMealViewController: UIViewController ,UINavigationControllerDelegate
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var mealName: UITextField!
+    var delegate : UpdateMealDelegate?
     var meal : Meal?
     override func viewDidLoad() {
         
@@ -69,7 +70,16 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
             "mealValue" :  Double((priceTextField.text)!)! ,
             "mealImage" : "image"
         ]
-        MealDAO.updateMeal(parameters: parameters, rest_id: 1, meal_id: (meal?.mealId)!)
+        MealDAO.updateMeal(parameters: parameters, rest_id: 1, meal_id: (meal?.mealId)!) {
+            (updatedMeal) in
+            DispatchQueue.main.async {
+                self.delegate?.updateMeal(updatedMeal: updatedMeal)
+                print("hhh")
+              self.navigationController?.popViewController(animated: true)
+            }
+            
+        }
+      
         
     }
     

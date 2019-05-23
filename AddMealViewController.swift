@@ -13,10 +13,11 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
+    var delegate : MealDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
          priceTextField.delegate = self
-
+        
         // Do any additional setup after loading the view.
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -67,6 +68,8 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
  
     @IBAction func add(_ sender: Any)
     {
+ 
+        
           print((nameTextField.text)!)
         let parameters : [String:Any] = [
             
@@ -75,7 +78,14 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
             "mealImage" : "image"
         ]
         
-        MealDAO.addMeal(parameters: parameters, restaurantId: 1)
+        let isAdded : Int = MealDAO.addMeal(parameters: parameters, restaurantId: 1)
+        
+        
+            self.navigationController?.popViewController(animated: true)
+            delegate?.addMeal()
+        
+        
     }
    
 }
+
