@@ -9,14 +9,14 @@
 import UIKit
 
 class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,UIImagePickerControllerDelegate , UITextFieldDelegate{
-
+    
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     var delegate : MealDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-         priceTextField.delegate = self
+        priceTextField.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -27,10 +27,10 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
         }
         else
         {
-         print("error")
+            print("error")
         }
-         self.dismiss(animated: true, completion: nil)
-       
+        self.dismiss(animated: true, completion: nil)
+        
         
         
     }
@@ -40,24 +40,24 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
         let compSepByCharInSet = string.components(separatedBy: aSet)
         let numberFiltered = compSepByCharInSet.joined(separator: "")
         return string == numberFiltered
-    
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     @IBAction func uploadImage(_ sender: UIButton) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -65,12 +65,10 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
         image.allowsEditing = false
         self.present(image, animated: true, completion: nil)
     }
- 
+    
     @IBAction func add(_ sender: Any)
     {
- 
         
-          print((nameTextField.text)!)
         let parameters : [String:Any] = [
             
             "mealName" :  (nameTextField.text)! ,
@@ -78,14 +76,29 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
             "mealImage" : "image"
         ]
         
-        let isAdded : Int = MealDAO.addMeal(parameters: parameters, restaurantId: 1)
+        MealDAO.addMeal(parameters: parameters, restaurantId: 1){
+            (id) in
+            if (id != nil)  {
+                print("kkk")
+                var newMeal : Meal = Meal()
+                newMeal.name = (self.nameTextField.text)!
+                newMeal.price = Double((self.priceTextField.text)!)!
+                newMeal.mealId = id!
+                newMeal.image = "image"
+                print(newMeal)
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                    self.delegate?.addMeal(meal: newMeal)
+                    
+                    
+                }
+            }
+        }
         
         
-            self.navigationController?.popViewController(animated: true)
-            delegate?.addMeal()
+        
         
         
     }
-   
+    
 }
-

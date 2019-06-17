@@ -21,11 +21,12 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        restaurantId = UserDefaults.standard.integer(forKey: "restaurantAdminId")
-        print(restaurantId!)
-        MealDAO.getMeals(resturantId: restaurantId! ){
+        let restaurant: Resturant = UserStoredData.returnUserDefaults()
+        print(restaurant.restaurantId!)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        MealDAO.getMeals(resturantId: restaurant.restaurantId! ){
             (mealList) in
-            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             DispatchQueue.main.async {
                 self.meals = mealList
                 self.tableView.reloadData()
@@ -36,17 +37,20 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         // tableView.reloadData()
         
     }
-    func addMeal() {
-        
+    func addMeal( meal: Meal) {
+        meals.append(meal)
         self.tableView.reloadData()
     }
     func updateMeal(updatedMeal :Meal)
     {
+        print("update")
         for i in 0..<meals.count
         {
+            print(i)
             if updatedMeal.mealId == meals[i].mealId
             {
-                meals[i].image = updatedMeal.image
+                print("checkkkk")
+                meals[i].image = "rest.jpg"
                 meals[i].name = updatedMeal.name
                 meals[i].price = updatedMeal.price
                 tableView.reloadData()
@@ -88,6 +92,10 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         updateViewController.delegate = self
         self.navigationController?.pushViewController(updateViewController, animated: true)
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AddMealViewController
+        vc.delegate = self
     }
     
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
     
-     // MARK: - Properties
+    // MARK: - Properties
     @IBOutlet weak var barCodeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -18,11 +18,11 @@ class HistoryTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
-
+    
 }

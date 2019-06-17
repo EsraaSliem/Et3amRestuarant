@@ -11,14 +11,14 @@ import Alamofire
 class ResturantDAO {
     
     
-    public static  func login( email : String , pass :String ) -> Int
+    public static  func login( email : String , pass :String , completionHandler:@escaping(Int)->Void)
         
     {
         let params : String = "?email="+email+"&password="+pass
         
         
         var code: Int = 0
-        var restaurant : Resturant = Resturant()
+        var restaurant : Resturant?
         let url : String = Et3amRestuarantAPI.restaurantBaseURL + RestaurantURLs.loginURL.rawValue + params
         Alamofire.request(url).responseJSON {
             response in
@@ -41,14 +41,11 @@ class ResturantDAO {
                         print(restaurantName)
                         let restaurantImage = restaurantDetails["restaurantImage"] as!  String
                         print(restaurantImage)
-                        restaurant.email = email
-                        restaurant.pass = pass
-                        restaurant.name = restaurantName
-                        restaurant.restaurantId = restaurantId
-                        restaurant.image = restaurantImage
-                        saveInUserDefaults(restaurant: restaurant)
+                        restaurant = Resturant(restaurantId: restaurantId,name: restaurantName ,pass: pass , image: restaurantImage, email: email)
+                        
+                        UserStoredData.saveInUserDefaults(restaurant: restaurant!)
                     }
-                    
+                    completionHandler(code)
                     
                 } catch{
                     print(error)
@@ -60,17 +57,11 @@ class ResturantDAO {
             }
             
         }
-        return code
+       
         
         
     }
-    static func  saveInUserDefaults(restaurant :Resturant){
-        
-        UserDefaults.standard.set(restaurant.email, forKey: "restaurantAdminEmail")
-        UserDefaults.standard.set(restaurant.pass, forKey: "restaurantAdminPass")
-        UserDefaults.standard.set(restaurant.restaurantId, forKey: "restaurantAdminId")
-        UserDefaults.standard.set( restaurant.image,  forKey: "image")
-    }
+   
    
 }
 

@@ -9,40 +9,61 @@
 import UIKit
 import Alamofire
 class VerificationViewController: UIViewController {
-   // MARK: - Properties
-
+    // MARK: - Properties
+    
     @IBOutlet weak var barCodeTextField: UITextField!
-    @IBAction func close(_ sender: Any) {
-    alertView.isHidden = true
-    }
-    @IBAction func doneButton(_ sender: UIButton) {
-    }
-    @IBOutlet weak var priceTextField: UITextField!
-  
-    @IBOutlet weak var alertView: UIView!
-   // MARK: - Init
+        // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        verifiedButton.layer.cornerRadius = 15
-        verifiedButton.clipsToBounds=true
+        //        verifiedButton.layer.cornerRadius = 15
+        //        verifiedButton.clipsToBounds=true
         // Do any additional setup after loading the view.
     }
 
-    @IBOutlet weak var verifiedButton: UIButton!
     
-    
-    @IBAction func Verification(_ sender: Any) {
-        alertView.isHidden = false
+    @IBAction func verify(_ sender: Any) {
+        let code = barCodeTextField.text!
+        CouponDAO.checkCouponReservation(code: code){
+            (id)
+            in
+            print(id)
+            if id != nil {
+                let alert = UIAlertController(title: "verified sucessfully!", message: nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                
+                alert.addTextField(configurationHandler: { textField in
+                    textField.placeholder = "enter meal price please..."
+                })
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    
+                    if let price = alert.textFields?.first?.text {
+                        
+                    CouponDAO.useCoupon(restId: UserStoredData.returnUserDefaults().restaurantId!, code: code, price: Double(price)!)
+                        {
+                            (id)
+                            in
+                            if let id = id{
+                                self.showToast(message: "sucessful")
+                            }
+                            else
+                            {
+                                self.showToast(message: "error")
+                            }
+                        }
+                    }
+                }))
+                
+                self.present(alert, animated: true)
+            }
+            else
+            {
+                self.showToast(message: "invalid barcode")
+            }
+            
+        }
+        
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

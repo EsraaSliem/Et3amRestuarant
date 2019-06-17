@@ -8,5 +8,5 @@
 
 import Foundation
 protocol MealDelegate {
-    func addMeal()
+    func addMeal( meal: Meal) 
 }

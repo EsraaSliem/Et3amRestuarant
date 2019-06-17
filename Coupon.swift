@@ -7,10 +7,10 @@
 //
 
 import Foundation
-struct Coupon {
-    
-    var couponId : Int?
-    var barCode : Int64?
+struct UsedCoupon {
+  
+    var barCode : String?
     var couponValue : Double?
+    var couponDate : Date?
     
 }

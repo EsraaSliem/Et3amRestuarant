@@ -16,10 +16,11 @@ class MealDAO {
     
     //    var meal : Meal
     
-    static func addMeal( parameters : [String:Any] ,restaurantId :Int) -> Int
+    static func addMeal( parameters : [String:Any] ,restaurantId :Int, completionHandler:@escaping(Int?)->Void)
         
     {
         var code = 0
+        var id: Int?
         Alamofire.request(Et3amRestuarantAPI.mealBaseURL + String(restaurantId) + MealURLs.addMeal.rawValue,
                           method: .post,
                           parameters: parameters,
@@ -34,6 +35,11 @@ class MealDAO {
                                 let returnedData = sucessDataValue as! NSDictionary
                                 print(returnedData)
                                 code = (returnedData["code"] as? Int)!
+                                if(code == 1)
+                                {
+                                   id = (returnedData["id"] as? Int)!
+                                }
+                                 completionHandler(id)
                                 break
                             case .failure(let error):
                                 print(error)
@@ -41,8 +47,7 @@ class MealDAO {
                             }
                             
         }
-        return code
-        
+       
         
     }
     
@@ -108,7 +113,7 @@ class MealDAO {
                                 print("enter")
                                 let sucessDataValue = response.result.value
                                 let returnedData = sucessDataValue as! NSDictionary
-                                meal.mealId = returnedData["mealId"] as? Int
+                                meal.mealId = meal_id
                                 meal.name = returnedData["mealName"] as? String
                                 meal.price = returnedData["mealValue"] as? Double
                                 meal.image = returnedData["mealImage"] as? String
@@ -128,12 +133,11 @@ class MealDAO {
     
     
     
-    public static  func deleteMeal( rest_id : Int , meal_id :Int ) -> Int
+    public static  func deleteMeal( rest_id : Int , meal_id :Int ) ->Int
         
     {
         
         var code: Int = 0
-        var restaurant : Resturant = Resturant()
         let url : String = Et3amRestuarantAPI.mealBaseURL + String(rest_id) + MealURLs.removeMeal.rawValue + String(meal_id)
         Alamofire.request(url,
                           method: .delete,
