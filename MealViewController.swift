@@ -8,7 +8,8 @@
 
 import UIKit
 import Alamofire
-
+import SDWebImage
+import SVProgressHUD
 class MealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,MealDelegate ,UpdateMealDelegate {
     
     // MARK: - Properties
@@ -16,27 +17,37 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     private let mealResuableIdentifier : String = "cell2"
     var meals : Array<Meal> = []
     var restaurantId :Int?
+    let restaurant: Resturant = UserStoredData.returnUserDefaults()
+    
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
+                loadData()
+        //  print("count : \(meals.count)")
+        // tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
-        let restaurant: Resturant = UserStoredData.returnUserDefaults()
-        print(restaurant.restaurantId!)
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+
+        
+    }
+    func loadData()
+    {
+        
+        SVProgressHUD.show()
         MealDAO.getMeals(resturantId: restaurant.restaurantId! ){
-            (mealList) in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            (mealList)
+            in
+         
+            SVProgressHUD.dismiss()
             DispatchQueue.main.async {
                 self.meals = mealList
                 self.tableView.reloadData()
             }
         }
-        
-        //  print("count : \(meals.count)")
-        // tableView.reloadData()
-        
+        SVProgressHUD.dismiss()
+
     }
+    
     func addMeal( meal: Meal) {
         meals.append(meal)
         self.tableView.reloadData()
@@ -50,7 +61,8 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             if updatedMeal.mealId == meals[i].mealId
             {
                 print("checkkkk")
-                meals[i].image = "rest.jpg"
+                meals[i].image = updatedMeal.image
+                
                 meals[i].name = updatedMeal.name
                 meals[i].price = updatedMeal.price
                 tableView.reloadData()
@@ -70,7 +82,15 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.mealNameLabel?.text = meals[indexPath.row].name
         print(meals[indexPath.row].name!)
-        cell.mealPriceLabel?.text = String( describing: meals[indexPath.row].price!)
+        
+        if let image = meals[indexPath.row].image, !image.isEmpty {
+            cell.mealPriceLabel?.text = String( describing: meals[indexPath.row].price!)
+            cell.mealImageView.sd_setShowActivityIndicatorView(true)
+            cell.mealPriceLabel?.text = String( describing: meals[indexPath.row].price!)
+            cell.mealImageView.sd_setIndicatorStyle(.gray)
+            cell.mealPriceLabel?.text = String( describing: meals[indexPath.row].price!)
+            cell.mealImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId: image)), completed: nil)
+        }
         
         return cell
         
@@ -98,4 +118,11 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         vc.delegate = self
     }
     
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
+        UserStoredData.removeUserDefaults()
+        
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+        
+        self.present(loginVC, animated: true, completion: nil)
+    }
 }

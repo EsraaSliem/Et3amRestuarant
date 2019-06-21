@@ -12,15 +12,18 @@ class VerificationViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet weak var barCodeTextField: UITextField!
+     @IBOutlet weak var titleNavBar: UINavigationItem!
         // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleNavBar.title = UserStoredData.returnUserDefaults().name
         //        verifiedButton.layer.cornerRadius = 15
         //        verifiedButton.clipsToBounds=true
         // Do any additional setup after loading the view.
     }
 
     
+   
     @IBAction func verify(_ sender: Any) {
         let code = barCodeTextField.text!
         CouponDAO.checkCouponReservation(code: code){
@@ -66,4 +69,12 @@ class VerificationViewController: UIViewController {
     }
 
     
+    @IBAction func logOut(_ sender: UIBarButtonItem) {
+        UserStoredData.removeUserDefaults()
+        
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+        
+        self.present(loginVC, animated: true, completion: nil)
+        
+    }
 }

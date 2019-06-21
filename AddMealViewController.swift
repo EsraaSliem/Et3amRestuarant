@@ -7,13 +7,16 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,UIImagePickerControllerDelegate , UITextFieldDelegate{
     
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
+    
+    var mealImageName: String?
     var delegate : MealDelegate?
+    var isUploadImage : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         priceTextField.delegate = self
@@ -24,6 +27,8 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
             mealImage.image = image
+            let imageData: Data = UIImageJPEGRepresentation(image, 0.2)!
+            self.uploadMealImage(imageData)
         }
         else
         {
@@ -68,37 +73,53 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
     
     @IBAction func add(_ sender: Any)
     {
-        
-        let parameters : [String:Any] = [
+        if(!(nameTextField.text?.isEmpty)! && !(priceTextField.text?.isEmpty)! && isUploadImage)
+        {
+            SVProgressHUD.show()
+            let parameters : [String:Any] = [
+                
+                "mealName" :  (nameTextField.text)! ,
+                "mealValue" :  Double((priceTextField.text)!)! ,
+                "mealImage" : mealImageName!
+            ]
             
-            "mealName" :  (nameTextField.text)! ,
-            "mealValue" :  Double((priceTextField.text)!)! ,
-            "mealImage" : "image"
-        ]
-        
-        MealDAO.addMeal(parameters: parameters, restaurantId: 1){
-            (id) in
-            if (id != nil)  {
-                print("kkk")
-                var newMeal : Meal = Meal()
-                newMeal.name = (self.nameTextField.text)!
-                newMeal.price = Double((self.priceTextField.text)!)!
-                newMeal.mealId = id!
-                newMeal.image = "image"
-                print(newMeal)
-                DispatchQueue.main.async {
-                    self.navigationController?.popViewController(animated: true)
-                    self.delegate?.addMeal(meal: newMeal)
-                    
-                    
+            MealDAO.addMeal(parameters: parameters, restaurantId: 1){
+                (id) in
+                SVProgressHUD.dismiss()
+                if (id != nil)  {
+                    print("kkk")
+                    var newMeal : Meal = Meal()
+                    newMeal.name = (self.nameTextField.text)!
+                    newMeal.price = Double((self.priceTextField.text)!)!
+                    newMeal.mealId = id!
+                    newMeal.image = self.mealImageName!
+                    print(newMeal)
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                        self.delegate?.addMeal(meal: newMeal)
+                        
+                        
+                    }
                 }
             }
+            
+            
         }
-        
-        
-        
-        
-        
+        else{
+            SVProgressHUD.showError(withStatus: "please, fill all data")
+        }
+    }
+    func uploadMealImage(_ imageData: Data) {
+        //   self.uploadStarts()
+        ImageAPI.uploadImage(imgData: imageData, completionHandler: { result in
+            
+            //     self.uploadCompleted()
+            
+            if let _ = result.0, let publicId = result.1 {
+                self.mealImageName = publicId
+                self.isUploadImage = true
+            }
+        })
     }
     
 }

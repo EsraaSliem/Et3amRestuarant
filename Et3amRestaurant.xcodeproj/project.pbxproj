@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02104A3222BBC7D200E7ACE6 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02104A3122BBC7D200E7ACE6 /* ImageAPI.swift */; };
 		02151FA8229FF10400A6A94A /* rest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02151FA7229FF10400A6A94A /* rest.jpg */; };
 		02151FAA22A0462000A6A94A /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02151FA922A0462000A6A94A /* Color.xcassets */; };
 		024F3461228F5314007249C8 /* Et3amRestaurantTests in Resources */ = {isa = PBXBuildFile; fileRef = 024F3460228F5314007249C8 /* Et3amRestaurantTests */; };
@@ -21,6 +22,7 @@
 		029180EE22909BF2002D3712 /* ResturantDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180ED22909BF2002D3712 /* ResturantDAO.swift */; };
 		029180F022909C01002D3712 /* MealDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180EF22909C01002D3712 /* MealDAO.swift */; };
 		029180F222909C1A002D3712 /* CouponDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029180F122909C1A002D3712 /* CouponDAO.swift */; };
+		02BFC7CF22BBE06D008B3627 /* UpdateMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255B598229641E800853B20 /* UpdateMealViewController.swift */; };
 		02C965B4229F6A44006D400A /* UserSoredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C965B3229F6A44006D400A /* UserSoredData.swift */; };
 		58FA0EBB6932FA697332592D /* Pods_Et3amRestaurantTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC1CEC95AD775155BF7DB11 /* Pods_Et3amRestaurantTests.framework */; };
 		B0833226E769AF5259AC0A41 /* Pods_Et3amRestaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA25622BA9D565E57580533C /* Pods_Et3amRestaurant.framework */; };
@@ -60,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02104A3122BBC7D200E7ACE6 /* ImageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		02151FA7229FF10400A6A94A /* rest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rest.jpg; path = ../../Users/jets39/Documents/rest.jpg; sourceTree = "<group>"; };
 		02151FA922A0462000A6A94A /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		024F3460228F5314007249C8 /* Et3amRestaurantTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantTests; sourceTree = "<group>"; };
@@ -135,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02104A2E22BBC56D00E7ACE6 /* Netowrk */ = {
+			isa = PBXGroup;
+			children = (
+				029180E622907150002D3712 /* Et3amRestuarantAPI.swift */,
+			);
+			name = Netowrk;
+			sourceTree = "<group>";
+		};
 		02151FA6229FF0EC00A6A94A /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,7 +187,6 @@
 				029180ED22909BF2002D3712 /* ResturantDAO.swift */,
 				029180EF22909C01002D3712 /* MealDAO.swift */,
 				029180F122909C1A002D3712 /* CouponDAO.swift */,
-				029180EA22909BA4002D3712 /* Pojo */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -214,8 +224,7 @@
 		C72366C3228ACDC500ED07BD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				029180E622907150002D3712 /* Et3amRestuarantAPI.swift */,
-				02C965B3229F6A44006D400A /* UserSoredData.swift */,
+				02104A2E22BBC56D00E7ACE6 /* Netowrk */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -223,6 +232,9 @@
 		C72366C9228B064D00ED07BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02C965B3229F6A44006D400A /* UserSoredData.swift */,
+				02104A3122BBC7D200E7ACE6 /* ImageAPI.swift */,
+				029180EA22909BA4002D3712 /* Pojo */,
 				029180EB22909BCB002D3712 /* DAO */,
 			);
 			name = Model;
@@ -470,10 +482,18 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Et3amRestaurant/Pods-Et3amRestaurant-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -534,6 +554,7 @@
 				0255B597229636F300853B20 /* MealDelegate.swift in Sources */,
 				C71594B6228CA2E90016126D /* MealTableViewCell.swift in Sources */,
 				029180F222909C1A002D3712 /* CouponDAO.swift in Sources */,
+				02104A3222BBC7D200E7ACE6 /* ImageAPI.swift in Sources */,
 				C7799B9B228C31B300FE3BF1 /* HistoryViewController.swift in Sources */,
 				C723670D228C17CC00ED07BD /* Meal.swift in Sources */,
 				C71594BA228CCAC80016126D /* HistoryTableViewCell.swift in Sources */,
@@ -551,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02BFC7CF22BBE06D008B3627 /* UpdateMealViewController.swift in Sources */,
 				C75B9A832289755000795EC1 /* Et3amRestaurantTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

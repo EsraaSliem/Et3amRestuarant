@@ -23,6 +23,10 @@ class UserStoredData {
         let decodedRestaurant = NSKeyedUnarchiver.unarchiveObject(with: decoded!) as! Resturant
         return decodedRestaurant
     }
-   
+    static func removeUserDefaults()
+    {
+       userDefaults.removeObject(forKey: objectName)
+      
+    }
     
 }

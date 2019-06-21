@@ -17,50 +17,50 @@ class CouponDAO {
         print(url)
         Alamofire.request("https://et3am.herokuapp.com/coupon/use_coupon_list?restaurantId=1" ,
                           method: .get,
-                         // parameters: parameters,
-                          encoding: JSONEncoding.default,
-                          headers: nil).responseJSON  {
-                            
-                            response in
-                            
-                            switch response.result {
-                            case .success:
-                                print("sucess")
-                                let sucessDataValue = response.result.value
-                                let returnedData = sucessDataValue as! NSDictionary
-                                
-                                print("enter")
-                                
-                                let code =  returnedData.value(forKey: "code")! as! Int
-                                print(code)
-                                if(code == 1)
-                                {
-                                    let results =  returnedData.value(forKey: "restaurantCoupons")! as! Array< NSDictionary >
-                                    for i in results
-                                    {
-                                        var coupon : UsedCoupon = UsedCoupon()
-                                        coupon.barCode = i["barCode"] as?  String
-                                        coupon.couponDate = i["usedDate"] as? Date
-                                        coupon.couponValue = i["price"] as? Double
-                                        self.coupons.append(coupon)
-                                    }
-                                    completionHandler(coupons)
-                                }
-                                
-                                
-                                break
-                            case .failure(let error):
-                                print(error)
-                                
-                            }
-                            
+                          // parameters: parameters,
+            encoding: JSONEncoding.default,
+            headers: nil).responseJSON  {
+                
+                response in
+                
+                switch response.result {
+                case .success:
+                    print("sucess")
+                    let sucessDataValue = response.result.value
+                    let returnedData = sucessDataValue as! NSDictionary
+                    
+                    print("enter")
+                    
+                    let code =  returnedData.value(forKey: "code")! as! Int
+                    print(code)
+                    if(code == 1)
+                    {
+                        let results =  returnedData.value(forKey: "restaurantCoupons")! as! Array< NSDictionary >
+                        for i in results
+                        {
+                            var coupon : UsedCoupon = UsedCoupon()
+                            coupon.barCode = i["barCode"] as?  String
+                            coupon.couponDate = i["usedDate"] as? Date
+                            coupon.couponValue = i["price"] as? Double
+                            self.coupons.append(coupon)
+                        }
+                       
+                    }
+                     completionHandler(coupons)
+                    
+                    break
+                case .failure(let error):
+                    print(error)
+                    
+                }
+                
         }
         
     }
     public  static func checkCouponReservation( code: String , completionHandler:@escaping(Int?)->Void )
         
     {
-         
+        
         var paramCode = "?code="+code
         
         let url : String = Et3amRestuarantAPI.couponBaseURL+CoupponURLs.checkReservation.rawValue+paramCode
@@ -86,9 +86,9 @@ class CouponDAO {
                     var x: Int?
                     if(code == 1)
                     {
-                           x = returnedData["id"] as?  Int
+                        x = returnedData["id"] as?  Int
                     }
-                     completionHandler(x)
+                    completionHandler(x)
                     
                     break
                 case .failure(let error):
@@ -104,7 +104,7 @@ class CouponDAO {
         
     {
         
-        var params = "?restaurantId="+String(restId)+"&barCode"+code+"&price"+String(price)
+        var params = "?restaurantId="+String(restId)+"&barCode="+code+"&price="+String(price)
         let url : String = Et3amRestuarantAPI.couponBaseURL+CoupponURLs.useCoupon.rawValue+params
         print(url)
         Alamofire.request(url ,
@@ -141,5 +141,5 @@ class CouponDAO {
         }
         
     }
-   
+
 }

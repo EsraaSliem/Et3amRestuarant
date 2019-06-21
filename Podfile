@@ -17,4 +17,9 @@ target 'Et3amRestaurant' do
     # Pods for testing
   end
 pod 'Alamofire', '~> 4.7'
+pod "SVProgressHUD", '~> 1.1.2' 
+pod 'ChameleonFramework'
+pod 'SwiftyJSON', '~> 3.0’
+pod 'SDWebImage', '~> 4.0’
+
 end

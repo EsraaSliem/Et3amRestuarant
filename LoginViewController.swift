@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class LoginViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -21,9 +21,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logoImageView.layer.cornerRadius = 15
-        logoImageView.clipsToBounds=true
-        loginButton.isEnabled = false
+//        logoImageView.layer.cornerRadius = 15
+//        logoImageView.clipsToBounds=true
+//        loginButton.isEnabled = false
       
     }
     
@@ -32,11 +32,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         
-         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            SVProgressHUD.show()
         ResturantDAO.login(email: restaurnatEmailTextFie.text!, pass:passwordTextField.text!){
             
             (code) in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            SVProgressHUD.dismiss()
             if  (code == 1)
             {
                 

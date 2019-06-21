@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import SDWebImage
+import SVProgressHUD
 class UpdateMealViewController: UIViewController ,UINavigationControllerDelegate ,UIImagePickerControllerDelegate ,
 UITextFieldDelegate{
     
@@ -17,17 +18,19 @@ UITextFieldDelegate{
     @IBOutlet weak var mealName: UITextField!
     var delegate : UpdateMealDelegate?
     var meal : Meal?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         priceTextField.delegate = self
         priceTextField.text =  String( describing: meal!.price!)
         mealName.text = meal?.name
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        print(meal?.image!)
+        if let image = meal?.image, !image.isEmpty {
+            mealImage.sd_setShowActivityIndicatorView(true)
+            mealImage.sd_setIndicatorStyle(.gray)
+            mealImage.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId: image)), completed: nil)
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -50,6 +53,8 @@ UITextFieldDelegate{
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
             mealImage.image = image
+            let imageData: Data = UIImageJPEGRepresentation(image, 0.2)!
+            self.uploadMealImage(imageData)
         }
         else
         {
@@ -61,28 +66,44 @@ UITextFieldDelegate{
         
     }
     @IBAction func updateMeal(_ sender: UIButton) {
-        let parameters : [String:Any] = [
+        if(!(priceTextField.text?.isEmpty)! && !(mealName.text?.isEmpty)!)
+        {
+            SVProgressHUD.show()
+            let parameters : [String:Any] = [
+                
+                "mealName" :  (mealName.text)! ,
+                "mealValue" :  Double((priceTextField.text)!)! ,
+                "mealImage" : meal!.image
+            ]
+            print("mealImage"+meal!.image!)
             
-            "mealName" :  (mealName.text)! ,
-            "mealValue" :  Double((priceTextField.text)!)! ,
-            "mealImage" : "image"
-        ]
-        MealDAO.updateMeal(parameters: parameters, rest_id: UserStoredData.returnUserDefaults().restaurantId!, meal_id: (meal?.mealId)!) {
-            (updatedMeal) in
-            DispatchQueue.main.async {
-                
-                print("hhh")
-                
-                self.delegate?.updateMeal(updatedMeal: updatedMeal)
-                self.navigationController?.popViewController(animated: true)
+            MealDAO.updateMeal(parameters: parameters, rest_id: UserStoredData.returnUserDefaults().restaurantId!, meal_id: (meal?.mealId)!) {
+                (updatedMeal) in
+                SVProgressHUD.dismiss()
+                DispatchQueue.main.async {
+                    
+                    print("hhh")
+                    
+                    self.delegate?.updateMeal(updatedMeal: updatedMeal)
+                    self.navigationController?.popViewController(animated: true)
+                    
+                }
                 
             }
-            
+        }
+        else {
+            SVProgressHUD.showError(withStatus: "please fill data")
         }
         
-        
     }
-    
+    func uploadMealImage(_ imageData: Data) {
+        
+        ImageAPI.uploadImage(imgData: imageData, completionHandler: { result in
+            if let _ = result.0, let publicId = result.1 {
+                self.meal!.image = publicId
+            }
+        })
+    }
     
     
 }
