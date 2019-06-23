@@ -42,6 +42,7 @@ class CouponDAO {
                             coupon.barCode = i["barCode"] as?  String
                             coupon.couponDate = i["usedDate"] as? Date
                             coupon.couponValue = i["price"] as? Double
+                            coupon.couponStatus = i["status"] as? Int
                             self.coupons.append(coupon)
                         }
                        

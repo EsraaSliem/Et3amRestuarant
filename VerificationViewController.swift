@@ -12,11 +12,13 @@ class VerificationViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet weak var barCodeTextField: UITextField!
+    @IBOutlet weak var verifiedButton: UIButton!
      @IBOutlet weak var titleNavBar: UINavigationItem!
         // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         titleNavBar.title = UserStoredData.returnUserDefaults().name
+      
         //        verifiedButton.layer.cornerRadius = 15
         //        verifiedButton.clipsToBounds=true
         // Do any additional setup after loading the view.

@@ -12,5 +12,6 @@ struct UsedCoupon {
     var barCode : String?
     var couponValue : Double?
     var couponDate : Date?
+    var couponStatus: Int?
     
 }

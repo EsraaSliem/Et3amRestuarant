@@ -175,7 +175,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="prU-dL-nkN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="162" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="prU-dL-nkN">
                                 <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,17 +195,17 @@
                                     </items>
                                 </navigationBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="122" id="zr3-36-1Dl" customClass="HistoryTableViewCell" customModule="Et3amRestaurant" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="320" height="122"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="162" id="zr3-36-1Dl" customClass="HistoryTableViewCell" customModule="Et3amRestaurant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="320" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zr3-36-1Dl" id="tXz-Jb-LhL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="161"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BarCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9t-sM-QD8">
                                                     <rect key="frame" x="28" y="28" width="264" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.86666667461395264" green="0.41568627953529358" blue="0.10588235408067703" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAs-HQ-oaT">
@@ -228,15 +228,35 @@
                                                         <constraint firstAttribute="height" constant="21" id="EBl-wL-Lh7"/>
                                                     </constraints>
                                                 </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OoW-8U-7sc">
+                                                    <rect key="frame" x="28" y="112" width="264" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCb-1R-HHf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="132" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzX-Gw-nGe">
+                                                            <rect key="frame" x="132" y="0.0" width="132" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="R9t-sM-QD8" secondAttribute="trailing" constant="20" id="3qy-K6-YR8"/>
+                                                <constraint firstItem="OoW-8U-7sc" firstAttribute="trailing" secondItem="eAs-HQ-oaT" secondAttribute="trailing" id="8RZ-yC-iBE"/>
                                                 <constraint firstItem="eAs-HQ-oaT" firstAttribute="trailing" secondItem="R9t-sM-QD8" secondAttribute="trailing" id="Hkr-6V-y5k"/>
                                                 <constraint firstItem="R9t-sM-QD8" firstAttribute="top" secondItem="tXz-Jb-LhL" secondAttribute="topMargin" constant="20" id="T6n-Yp-lto"/>
                                                 <constraint firstItem="eAs-HQ-oaT" firstAttribute="top" secondItem="R9t-sM-QD8" secondAttribute="bottom" constant="20" id="e86-ED-Dkw"/>
                                                 <constraint firstItem="R9t-sM-QD8" firstAttribute="leading" secondItem="tXz-Jb-LhL" secondAttribute="leadingMargin" constant="20" id="eIv-ne-IqO"/>
+                                                <constraint firstItem="OoW-8U-7sc" firstAttribute="leading" secondItem="eAs-HQ-oaT" secondAttribute="leading" id="eog-P9-ODs"/>
                                                 <constraint firstItem="eAs-HQ-oaT" firstAttribute="leading" secondItem="R9t-sM-QD8" secondAttribute="leading" id="foR-0O-YA1"/>
+                                                <constraint firstItem="OoW-8U-7sc" firstAttribute="top" secondItem="eAs-HQ-oaT" secondAttribute="bottom" constant="20" id="hs7-Z9-sAK"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -269,6 +289,7 @@
                                             <outlet property="barCodeLabel" destination="R9t-sM-QD8" id="6KQ-g6-SAr"/>
                                             <outlet property="dateLabel" destination="NVf-66-ufJ" id="2K9-Yf-L81"/>
                                             <outlet property="priceLabel" destination="NVf-66-ufJ" id="b5X-jD-gAv"/>
+                                            <outlet property="statusLabel" destination="mzX-Gw-nGe" id="GlK-cm-gIt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -305,30 +326,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8Y-9H-krK">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="FPi-KP-PdA"/>
-                                    <constraint firstAttribute="height" constant="44" id="LeZ-bm-TRR"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="OPM-Oh-B6l"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem id="dPj-yU-O5Y">
-                                        <barButtonItem key="leftBarButtonItem" image="Image" id="g5r-hz-TF0">
-                                            <color key="tintColor" red="0.396078431372549" green="0.070588235294117646" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="logOut:" destination="vSJ-5U-MqO" id="GTL-dC-RDo"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="new " id="Jz6-KS-v3L">
-                                            <color key="tintColor" red="0.39607843139999999" green="0.070588235289999995" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="lVm-OK-xov" kind="push" id="wd9-AS-eGv"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="264" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oX4-Ci-vg7">
                                 <rect key="frame" x="0.0" y="108" width="320" height="323"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -408,11 +405,35 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kM-Lr-jhs">
-                                <rect key="frame" x="139" y="76" width="42" height="20.5"/>
+                                <rect key="frame" x="139" y="76" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8Y-9H-krK">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="FPi-KP-PdA"/>
+                                    <constraint firstAttribute="height" constant="44" id="LeZ-bm-TRR"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="OPM-Oh-B6l"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="dPj-yU-O5Y">
+                                        <barButtonItem key="leftBarButtonItem" image="Image" id="g5r-hz-TF0">
+                                            <color key="tintColor" red="0.396078431372549" green="0.070588235294117646" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="logOut:" destination="vSJ-5U-MqO" id="GTL-dC-RDo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="new " id="Jz6-KS-v3L">
+                                            <color key="tintColor" red="0.39607843139999999" green="0.070588235289999995" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="lVm-OK-xov" kind="push" id="wd9-AS-eGv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -568,7 +589,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-Ps-0Ok">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-Ps-0Ok" customClass="RoundedButton" customModule="Et3amRestaurant" customModuleProvider="target">
                                         <rect key="frame" x="30" y="183" width="260" height="45"/>
                                         <color key="backgroundColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -628,6 +649,7 @@
                     <connections>
                         <outlet property="barCodeTextField" destination="gUp-eb-pIU" id="k23-Wq-glA"/>
                         <outlet property="titleNavBar" destination="AbS-DC-18s" id="7V6-0f-mhJ"/>
+                        <outlet property="verifiedButton" destination="5S5-Ps-0Ok" id="0AW-6z-GR9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bjx-IT-N1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -698,37 +720,46 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U5-mc-EUg">
                                         <rect key="frame" x="213" y="159" width="51" height="30"/>
-                                        <state key="normal" title="change"/>
+                                        <color key="tintColor" red="0.86666667460000002" green="0.41568627949999998" blue="0.10588235410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="change">
+                                            <color key="titleColor" red="0.86666667460000002" green="0.41568627949999998" blue="0.10588235410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="changeImage:" destination="ObY-4k-vJh" eventType="touchUpInside" id="pfV-TU-dMN"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="flS-wj-QQh">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="flS-wj-QQh">
                                         <rect key="frame" x="35" y="228" width="218" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vzA-Lo-jea">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="meal price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vzA-Lo-jea">
                                         <rect key="frame" x="35" y="281" width="218" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntv-jz-hZe">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntv-jz-hZe" customClass="RoundedButton" customModule="Et3amRestaurant" customModuleProvider="target">
                                         <rect key="frame" x="30" y="346" width="228" height="34"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.86666667460000002" green="0.41568627949999998" blue="0.10588235410000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="hr5-7l-k8Z"/>
                                         </constraints>
                                         <state key="normal" title="Update">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.86666667460000002" green="0.41568627949999998" blue="0.10588235410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="updateMeal:" destination="ObY-4k-vJh" eventType="touchUpInside" id="XGy-Uo-x5S"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Ntv-jz-hZe" firstAttribute="centerX" secondItem="ZuO-qe-Xx8" secondAttribute="centerX" id="1ft-V7-BbF"/>
                                     <constraint firstItem="1U5-mc-EUg" firstAttribute="trailing" secondItem="unh-SX-Bp0" secondAttribute="trailing" id="6Cg-uW-ul1"/>

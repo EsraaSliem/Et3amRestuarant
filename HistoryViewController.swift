@@ -12,6 +12,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     
+  
+   
     @IBOutlet weak var titleNavBar: UINavigationItem!
     private let resuableIdentifier : String = "cell"
     var restCouponList : Array<UsedCoupon>=[]
@@ -54,7 +56,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.barCodeLabel?.text = restCouponList[indexPath.row].barCode
         cell.dateLabel?.text = String(describing: restCouponList[indexPath.row].couponDate)
         cell.priceLabel?.text = String(describing: restCouponList[indexPath.row].couponValue ?? 0)
-        
+        switch restCouponList[indexPath.row].couponStatus! {
+        case 1:
+             cell.statusLabel.text = "paid"
+        case 2:
+            cell.statusLabel.text = "pending"
+        default:
+            cell.statusLabel.text = "pending.."
+        }
+       
         return cell
         
     }
