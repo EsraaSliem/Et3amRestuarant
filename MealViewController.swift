@@ -19,6 +19,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     var restaurantId :Int?
     let restaurant: Resturant = UserStoredData.returnUserDefaults()
     
+    @IBOutlet weak var titleLabel: UILabel!
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         // tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
+        titleLabel.text = UserStoredData.returnUserDefaults().name!
 
         
     }
@@ -100,7 +102,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            MealDAO.deleteMeal(rest_id: 1, meal_id: meals[indexPath.row].mealId!)
+            MealDAO.deleteMeal(rest_id: UserStoredData.returnUserDefaults().restaurantId!, meal_id: meals[indexPath.row].mealId!)
             meals.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

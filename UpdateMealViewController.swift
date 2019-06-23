@@ -9,8 +9,8 @@
 import UIKit
 import SDWebImage
 import SVProgressHUD
-class UpdateMealViewController: UIViewController ,UINavigationControllerDelegate ,UIImagePickerControllerDelegate ,
-UITextFieldDelegate{
+class UpdateMealViewController: UIViewController, UINavigationControllerDelegate,
+UIImagePickerControllerDelegate, UITextFieldDelegate{
     
     
     @IBOutlet weak var mealImage: UIImageView!

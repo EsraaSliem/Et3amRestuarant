@@ -21,10 +21,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        logoImageView.layer.cornerRadius = 15
-//        logoImageView.clipsToBounds=true
-//        loginButton.isEnabled = false
-      
+        loginButton.layer.cornerRadius = loginButton.frame.height / 2
+        loginButton.layer.masksToBounds = true
+        
     }
     
     
@@ -32,7 +31,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         
-            SVProgressHUD.show()
+        SVProgressHUD.show()
         ResturantDAO.login(email: restaurnatEmailTextFie.text!, pass:passwordTextField.text!){
             
             (code) in
