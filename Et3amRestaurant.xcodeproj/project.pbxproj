@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		02104A3222BBC7D200E7ACE6 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02104A3122BBC7D200E7ACE6 /* ImageAPI.swift */; };
-		02151FA8229FF10400A6A94A /* rest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02151FA7229FF10400A6A94A /* rest.jpg */; };
 		02151FAA22A0462000A6A94A /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02151FA922A0462000A6A94A /* Color.xcassets */; };
 		021A0A2E22BFAB5C00479AFC /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A0A2D22BFAB5C00479AFC /* RoundButton.swift */; };
 		021A0A3022BFC62500479AFC /* DesignableFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A0A2F22BFC62500479AFC /* DesignableFile.swift */; };
@@ -65,7 +64,6 @@
 
 /* Begin PBXFileReference section */
 		02104A3122BBC7D200E7ACE6 /* ImageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
-		02151FA7229FF10400A6A94A /* rest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rest.jpg; path = ../../Users/jets39/Documents/rest.jpg; sourceTree = "<group>"; };
 		02151FA922A0462000A6A94A /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		021A0A2D22BFAB5C00479AFC /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		021A0A2F22BFC62500479AFC /* DesignableFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableFile.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		02151FA6229FF0EC00A6A94A /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				02151FA7229FF10400A6A94A /* rest.jpg */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -444,7 +441,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C75B9A782289755000795EC1 /* LaunchScreen.storyboard in Resources */,
-				02151FA8229FF10400A6A94A /* rest.jpg in Resources */,
 				024F3461228F5314007249C8 /* Et3amRestaurantTests in Resources */,
 				C75B9A752289755000795EC1 /* Assets.xcassets in Resources */,
 				02151FAA22A0462000A6A94A /* Color.xcassets in Resources */,

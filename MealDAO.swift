@@ -75,6 +75,7 @@ class MealDAO {
                         meal.name = i["mealName"] as?  String
                         meal.price = i["mealValue"] as?  Double
                         meal.image = i["mealImage"] as?  String
+                        
                         print(meal.image)
                         meals.append(meal)
                         

@@ -92,6 +92,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.mealImageView.sd_setIndicatorStyle(.gray)
             cell.mealPriceLabel?.text = String( describing: meals[indexPath.row].price!)
             cell.mealImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId: image)), completed: nil)
+            
         }
         
         return cell
