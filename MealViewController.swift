@@ -18,7 +18,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     var meals : Array<Meal> = []
     var restaurantId :Int?
     let restaurant: Resturant = UserStoredData.returnUserDefaults()
-    
+ 
     @IBOutlet weak var titleLabel: UILabel!
     // MARK: - Init
     override func viewDidLoad() {
