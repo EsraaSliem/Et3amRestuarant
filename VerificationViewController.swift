@@ -37,7 +37,7 @@ class VerificationViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 
                 alert.addTextField(configurationHandler: { textField in
-                    textField.placeholder = "enter meal price please..."
+                    textField.placeholder = "enter meal price plese..."
                 })
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
