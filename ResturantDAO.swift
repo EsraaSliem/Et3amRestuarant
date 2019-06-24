@@ -33,10 +33,8 @@ class ResturantDAO {
                     if code == 1{
                         let results =  json["restaurantAdmin"] as! NSDictionary
                         //    print(results)
-                        
-                        let restaurantId  = results["restaurantAdminId"] as!  Int
-                        print(restaurantId)
                         let restaurantDetails = results["restaurants"] as!  NSDictionary
+                        let restaurantId  = restaurantDetails["restaurantId"] as!  Int
                         let restaurantName = restaurantDetails["restaurantName"] as!  String
                         print(restaurantName)
                         let restaurantImage = restaurantDetails["restaurantImage"] as!  String

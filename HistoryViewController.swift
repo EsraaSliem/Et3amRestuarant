@@ -17,9 +17,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var titleNavBar: UINavigationItem!
     private let resuableIdentifier : String = "cell"
     var restCouponList : Array<UsedCoupon>=[]
-    let parameters : [String:Int] = [
-        "restaurantId" :  UserStoredData.returnUserDefaults().restaurantId!
-    ]
+   
     
     // MARK: - Init
     override func viewDidLoad() {
@@ -33,7 +31,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     func loadData() {
         SVProgressHUD.show()
-        CouponDAO.getUsedCoupon(parameters: parameters ){
+        CouponDAO.getUsedCoupon(restId: UserStoredData.returnUserDefaults().restaurantId!){
             (couponList)
             in
             print("jjj")
@@ -54,7 +52,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: resuableIdentifier)! as! HistoryTableViewCell
         cell.barCodeLabel?.text = restCouponList[indexPath.row].barCode
-        cell.dateLabel?.text = String(describing: restCouponList[indexPath.row].couponDate)
+        cell.dateLabel?.text = restCouponList[indexPath.row].getCreationDate(milisecond: restCouponList[indexPath.row].couponDate!)
         cell.priceLabel?.text = String(describing: restCouponList[indexPath.row].couponValue ?? 0)
         switch restCouponList[indexPath.row].couponStatus! {
         case 1:

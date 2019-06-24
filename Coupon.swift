@@ -11,7 +11,20 @@ struct UsedCoupon {
   
     var barCode : String?
     var couponValue : Double?
-    var couponDate : Date?
+    var couponDate : Double?
     var couponStatus: Int?
+    
+    
+    
+
+    
+       mutating func getCreationDate(milisecond: Double) -> String {
+        let dateVar = Date.init(timeIntervalSinceNow: TimeInterval(milisecond)/1000)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm"
+        let date = dateFormatter.string(from: dateVar)
+        print(date)
+        return date
+    }
     
 }

@@ -10,12 +10,14 @@ import Foundation
 import Alamofire
 class CouponDAO {
     static var coupons : Array<UsedCoupon> = []
-    public  static func getUsedCoupon( parameters : [String:Int] , completionHandler:@escaping(Array<UsedCoupon>)->Void )
+    public  static func getUsedCoupon( restId: Int, completionHandler:@escaping(Array<UsedCoupon>)->Void )
         
     {
-        let url : String = Et3amRestuarantAPI.couponBaseURL+CoupponURLs.couponList.rawValue
+        let url : String = Et3amRestuarantAPI.couponBaseURL+CoupponURLs.couponList.rawValue+"?restaurantId="+String( restId)
         print(url)
-        Alamofire.request("https://et3am.herokuapp.com/coupon/use_coupon_list?restaurantId=1" ,
+        //"https://et3am.herokuapp.com/coupon/use_coupon_list?restaurantId=1"
+         //  https://et3am.herokuapp.com/coupon/use_coupon_list?restaurantId=2
+        Alamofire.request( url,
                           method: .get,
                           // parameters: parameters,
             encoding: JSONEncoding.default,
@@ -40,7 +42,7 @@ class CouponDAO {
                         {
                             var coupon : UsedCoupon = UsedCoupon()
                             coupon.barCode = i["barCode"] as?  String
-                            coupon.couponDate = i["usedDate"] as? Date
+                            coupon.couponDate = i["usedDate"] as? Double
                             coupon.couponValue = i["price"] as? Double
                             coupon.couponStatus = i["status"] as? Int
                             self.coupons.append(coupon)
