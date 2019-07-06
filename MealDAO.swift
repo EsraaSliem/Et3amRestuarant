@@ -9,11 +9,6 @@
 import Foundation
 import Alamofire
 class MealDAO {
-    
-    
-    
-    
-    
     //    var meal : Meal
     
     static func addMeal( parameters : [String:Any] ,restaurantId :Int, completionHandler:@escaping(Int?)->Void)
@@ -37,9 +32,9 @@ class MealDAO {
                                 code = (returnedData["code"] as? Int)!
                                 if(code == 1)
                                 {
-                                   id = (returnedData["id"] as? Int)!
+                                    id = (returnedData["id"] as? Int)!
                                 }
-                                 completionHandler(id)
+                                completionHandler(id)
                                 break
                             case .failure(let error):
                                 print(error)
@@ -47,27 +42,28 @@ class MealDAO {
                             }
                             
         }
-       
+        
         
     }
     
-    static  func getMeals( resturantId : Int ,completionHandler:@escaping(Array<Meal>)->Void )
+    static  func getMeals( resturantId : Int ,pageNum: Int ,completionHandler:@escaping(Array<Meal>)->Void )
         
     {
         var meals : Array<Meal> = []
-        let url : String = Et3amRestuarantAPI.restaurantBaseURL+String(resturantId)+MealURLs.allMeals.rawValue
+        let param : String = "?page="+String(pageNum)
+        let url : String = Et3amRestuarantAPI.restaurantBaseURL+String(resturantId)+MealURLs.allMeals.rawValue+param
+        print(url)
         Alamofire.request(url).responseJSON {
             response in
             switch response.result {
             case .success:
-                do{
-                    
-                    let data = response.data
-                    let json = try JSONSerialization.jsonObject(with: data!, options: []) as! Array<NSDictionary>
+                let json = response.result.value as! NSDictionary
+                if(json["code"] as! Int == 1){
+                    let mealsList = json["results"] as! [NSDictionary]
                     print(json)
                     //  let results =  json["restaurant"] as! Array< NSDictionary >
                     
-                    for i in json
+                    for i in mealsList
                     {
                         var meal : Meal = Meal()
                         meal.mealId = i["mealId"] as?  Int
@@ -80,11 +76,9 @@ class MealDAO {
                         meals.append(meal)
                         
                     }
-                    completionHandler(meals)
-                } catch
-                {
-                    print(error)
                 }
+                completionHandler(meals)
+                
                 break
             case .failure(let error):
                 print(error)

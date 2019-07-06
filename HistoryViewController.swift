@@ -11,9 +11,7 @@ import SVProgressHUD
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
-    
-  
-   
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var titleNavBar: UINavigationItem!
     private let resuableIdentifier : String = "cell"
     var restCouponList : Array<UsedCoupon>=[]
@@ -29,6 +27,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         loadData()
         
     }
+    
     func loadData() {
         SVProgressHUD.show()
         CouponDAO.getUsedCoupon(restId: UserStoredData.returnUserDefaults().restaurantId!){

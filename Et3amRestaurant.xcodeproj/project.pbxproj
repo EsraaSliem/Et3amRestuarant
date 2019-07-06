@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02104A3222BBC7D200E7ACE6 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02104A3122BBC7D200E7ACE6 /* ImageAPI.swift */; };
+		0210C91722CAEE5300325D8C /* RestaurantProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0210C91622CAEE5300325D8C /* RestaurantProfileViewController.swift */; };
 		02151FAA22A0462000A6A94A /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02151FA922A0462000A6A94A /* Color.xcassets */; };
 		021A0A2E22BFAB5C00479AFC /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A0A2D22BFAB5C00479AFC /* RoundButton.swift */; };
 		021A0A3022BFC62500479AFC /* DesignableFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A0A2F22BFC62500479AFC /* DesignableFile.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		02104A3122BBC7D200E7ACE6 /* ImageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
+		0210C91622CAEE5300325D8C /* RestaurantProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantProfileViewController.swift; sourceTree = "<group>"; };
 		02151FA922A0462000A6A94A /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		021A0A2D22BFAB5C00479AFC /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		021A0A2F22BFC62500479AFC /* DesignableFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableFile.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				025DB0E3228E726D0090B714 /* LoginViewController.swift */,
 				0255B5922295F61600853B20 /* AddMealViewController.swift */,
 				0255B598229641E800853B20 /* UpdateMealViewController.swift */,
+				0210C91622CAEE5300325D8C /* RestaurantProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				C723670D228C17CC00ED07BD /* Meal.swift in Sources */,
 				C71594BA228CCAC80016126D /* HistoryTableViewCell.swift in Sources */,
 				C75B9A732289755000795EC1 /* Et3amRestaurant.xcdatamodeld in Sources */,
+				0210C91722CAEE5300325D8C /* RestaurantProfileViewController.swift in Sources */,
 				C723670B228C17B800ED07BD /* Coupon.swift in Sources */,
 				021A0A2E22BFAB5C00479AFC /* RoundButton.swift in Sources */,
 				C75B9A6D2289755000795EC1 /* ViewController.swift in Sources */,

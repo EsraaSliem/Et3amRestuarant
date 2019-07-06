@@ -22,4 +22,5 @@ pod 'ChameleonFramework'
 pod 'SwiftyJSON', '~> 3.0’
 pod 'SDWebImage', '~> 4.0’
 
+
 end

@@ -8,17 +8,18 @@
 
 import UIKit
 import Alamofire
+
 class VerificationViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet weak var barCodeTextField: UITextField!
     @IBOutlet weak var verifiedButton: UIButton!
-     @IBOutlet weak var titleNavBar: UINavigationItem!
+    @IBOutlet weak var titleNavBar: UINavigationItem!
         // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         titleNavBar.title = UserStoredData.returnUserDefaults().name
-      
+        
         //        verifiedButton.layer.cornerRadius = 15
         //        verifiedButton.clipsToBounds=true
         // Do any additional setup after loading the view.
@@ -35,11 +36,11 @@ class VerificationViewController: UIViewController {
             if id != nil {
                 let alert = UIAlertController(title: "verified sucessfully!", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                
+               // let dropDown = DropDown()
                 alert.addTextField(configurationHandler: { textField in
                     textField.placeholder = "enter meal price plese..."
                 })
-                
+              
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     
                     if let price = alert.textFields?.first?.text {

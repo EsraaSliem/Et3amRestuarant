@@ -10,48 +10,64 @@ import UIKit
 import Alamofire
 import SDWebImage
 import SVProgressHUD
-class MealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,MealDelegate ,UpdateMealDelegate {
+
+class MealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,MealDelegate ,UpdateMealDelegate ,UISearchBarDelegate{
     
     // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     private let mealResuableIdentifier : String = "cell2"
     var meals : Array<Meal> = []
+    var mealList : Array<Meal> = []
+    var filteredMeals : Array<Meal> = []
     var restaurantId :Int?
+    var page: Int = 1
+    
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     let restaurant: Resturant = UserStoredData.returnUserDefaults()
- 
+    var searchBarIsActive = false
     @IBOutlet weak var titleLabel: UILabel!
+    
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
-                loadData()
+        loadData(pageNum: page)
         //  print("count : \(meals.count)")
         // tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
+       
         titleLabel.text = UserStoredData.returnUserDefaults().name!
-
+        sortList()
+      //  mealList = meals
+        searchBar.delegate = self 
         
     }
-    func loadData()
+    func sortList()
+    {
+        meals.sorted(by: { $0.mealId! > $1.mealId!})
+    }
+    func loadData(pageNum:Int)
     {
         
         SVProgressHUD.show()
-        MealDAO.getMeals(resturantId: restaurant.restaurantId! ){
+        MealDAO.getMeals(resturantId: restaurant.restaurantId! ,pageNum: pageNum ){
             (mealList)
             in
-         
+            
             SVProgressHUD.dismiss()
             DispatchQueue.main.async {
-                self.meals = mealList
+                self.meals.append(contentsOf: mealList)
                 self.tableView.reloadData()
             }
         }
         SVProgressHUD.dismiss()
-
+        
     }
     
     func addMeal( meal: Meal) {
         meals.append(meal)
+        sortList()
         self.tableView.reloadData()
     }
     func updateMeal(updatedMeal :Meal)
@@ -64,7 +80,6 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 print("checkkkk")
                 meals[i].image = updatedMeal.image
-                
                 meals[i].name = updatedMeal.name
                 meals[i].price = updatedMeal.price
                 tableView.reloadData()
@@ -72,28 +87,52 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-    
+    func checkToLoadNextPage()
+    {
+        if(meals.count%10==0)
+        {
+            page = page + 1
+            loadData(pageNum: page)
+        }
+    }
     // MARK: - Handler
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("count : \(meals.count)")
+        if searchBarIsActive  && (filteredMeals.count != 0 ) {
+            return filteredMeals.count
+        }
         return meals.count
     }
+  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: mealResuableIdentifier)! as! MealTableViewCell
         //cell.imageView?.image = UIImage(named: meals[indexPath.row].image!)
         
-        cell.mealNameLabel?.text = meals[indexPath.row].name
         print(meals[indexPath.row].name!)
-        
-        if let image = meals[indexPath.row].image, !image.isEmpty {
-            cell.mealPriceLabel?.text = String( describing: meals[indexPath.row].price!)
+        if searchBarIsActive  && (filteredMeals.count != 0 ){
+            mealList = filteredMeals
+            print("mealList")
+            print(mealList)
+        }
+        else{
+          
+            if indexPath.row == (meals.count - 1)
+            {
+                self.checkToLoadNextPage()
+            }
+              mealList = meals
+          }
+        print("mealList out ")
+        print(mealList)
+        cell.mealNameLabel?.text = mealList[indexPath.row].name
+        if let image = mealList[indexPath.row].image, !image.isEmpty {
+            cell.mealPriceLabel?.text = String( describing: mealList[indexPath.row].price!)
             cell.mealImageView.sd_setShowActivityIndicatorView(true)
-            cell.mealPriceLabel?.text = String( describing: meals[indexPath.row].price!)
             cell.mealImageView.sd_setIndicatorStyle(.gray)
-            cell.mealPriceLabel?.text = String( describing: meals[indexPath.row].price!)
             cell.mealImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId: image)), completed: nil)
             
         }
+        
         
         return cell
         
@@ -102,7 +141,6 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            
             MealDAO.deleteMeal(rest_id: UserStoredData.returnUserDefaults().restaurantId!, meal_id: meals[indexPath.row].mealId!)
             meals.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -127,5 +165,30 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         let loginVC = storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
         
         self.present(loginVC, animated: true, completion: nil)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBarIsActive = true
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBarIsActive = false
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBarIsActive = false
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBarIsActive = false
+    }
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+         searchBarIsActive = false
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredMeals = meals.filter({(meal) ->Bool in
+            let txt: NSString = meal.name! as NSString
+            let range = txt.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+            return range.location != NSNotFound
+        })
+        self.tableView.reloadData()
+        
     }
 }
