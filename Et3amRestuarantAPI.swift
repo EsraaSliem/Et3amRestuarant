@@ -21,6 +21,7 @@ enum MealURLs: String
     case  addMeal = "/addMeal"
     case removeMeal = "/deleteMeal/"
     case updateMeal = "/updateMeal/"
+    case topMeal = "/top_meal"
     
 }
 

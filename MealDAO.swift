@@ -89,6 +89,39 @@ class MealDAO {
         
         
     }
+    
+    static  func getTopMeal( resturantId : Int ,completionHandler:@escaping(String)->Void )
+        
+    {
+        var topMeal : String = ""
+      
+        let url : String = Et3amRestuarantAPI.restaurantBaseURL+String(resturantId)+MealURLs.topMeal.rawValue
+        print(url)
+        Alamofire.request(url).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                let json = response.result.value as! NSDictionary
+                if(json["code"] as! Int == 1){
+                    topMeal = json["topMeal"] as! String
+                    print(json)
+                    //  let results =  json["restaurant"] as! Array< NSDictionary >
+                    
+                   
+                }
+                completionHandler(topMeal)
+                
+                break
+            case .failure(let error):
+                print(error)
+                
+            }
+            
+        }
+        
+        
+    }
+
     public static  func updateMeal(parameters : [String:Any] ,rest_id :Int , meal_id : Int , completionHandler:@escaping(Meal)->Void)
         
     {

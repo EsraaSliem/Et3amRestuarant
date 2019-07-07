@@ -8,37 +8,67 @@
 
 import UIKit
 import SDWebImage
-
+import SVProgressHUD
 class RestaurantProfileViewController: UIViewController {
-    
+    // MARK :- outlets
     @IBOutlet weak var restImageView: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
-    
     @IBOutlet weak var titleLabel: UINavigationItem!
+    
+    @IBOutlet weak var totalDealsLabel: UILabel!
+    @IBOutlet weak var couponNumUnpaidLabel: UILabel!
+    @IBOutlet weak var couponNumpaidLabel: UILabel!
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    @IBOutlet weak var topMealLabel: UILabel!
+    
+    //MARK :- property
+    var usedCouponList: [UsedCoupon] = []
+    //MARK :- init
     override func viewDidLoad() {
         super.viewDidLoad()
+        SVProgressHUD.show()
+        loadData()
+        
+    }
+    func loadData() {
         let rest = UserStoredData.returnUserDefaults()
         titleLabel.title = rest.name
         restImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId:rest.image! )), completed: nil)
         emailLabel.text = rest.email
+        MealDAO.getTopMeal(resturantId: rest.restaurantId!){
+            self.topMealLabel.text = $0
+            
+        }
+        CouponDAO.getUsedCoupon(restId: rest.restaurantId!)
+        { (couponList)
+            in
+            self.usedCouponList = couponList
+            self.calculateDealsOperation()
+            
+        }
+     
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func calculateDealsOperation()
+    {
+        totalDealsLabel.text = String(usedCouponList.count)+"D"
+        let paidList = usedCouponList.filter(
+            {
+                $0.couponStatus == 1
+            }
+        )
+  
+        let totalAmountDeals = usedCouponList.reduce(0, { $0 + $1.couponValue!})
+        let paidMealsAmount = paidList.reduce(0, { $0 + $1.couponValue!})
+        let unpaidAmount = totalAmountDeals - paidMealsAmount
+        totalAmountLabel.text = String(totalAmountDeals)+"E"
+        couponNumpaidLabel.text = String(paidList.count)+"D / "+String(paidMealsAmount)+"E"
+        couponNumUnpaidLabel.text = String (usedCouponList.count - paidList.count)+"D / "+String(unpaidAmount)+"E"
+        SVProgressHUD.dismiss()
     }
-    
     
     @IBAction func closeButton(_ sender: Any) {
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
     
 }

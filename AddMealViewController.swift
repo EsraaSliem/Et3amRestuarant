@@ -13,10 +13,10 @@ class AddMealViewController: UIViewController ,UINavigationControllerDelegate ,U
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
-    
     var mealImageName: String?
     var delegate : MealDelegate?
     var isUploadImage : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         priceTextField.delegate = self

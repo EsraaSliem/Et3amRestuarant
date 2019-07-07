@@ -15,6 +15,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var titleNavBar: UINavigationItem!
     private let resuableIdentifier : String = "cell"
     var restCouponList : Array<UsedCoupon>=[]
+    var filteredRestCouponList : Array<UsedCoupon>=[]
+    var viewRestCouponList : Array<UsedCoupon>=[]
+     var searchBarIsActive = false
    
     
     // MARK: - Init
@@ -25,7 +28,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         titleNavBar.title = UserStoredData.returnUserDefaults().name
         loadData()
-        
+        searchBar.delegate = self
     }
     
     func loadData() {
@@ -45,15 +48,26 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: - Handler
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchBarIsActive  && (filteredRestCouponList.count != 0 ) {
+            return filteredRestCouponList.count
+        }
         return restCouponList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        if searchBarIsActive  && (filteredRestCouponList.count != 0 ) {
+            viewRestCouponList = filteredRestCouponList
+        }
+        else {
+            viewRestCouponList = restCouponList
+        }
         let cell = self.tableView.dequeueReusableCell(withIdentifier: resuableIdentifier)! as! HistoryTableViewCell
-        cell.barCodeLabel?.text = restCouponList[indexPath.row].barCode
-        cell.dateLabel?.text = restCouponList[indexPath.row].getCreationDate(milisecond: restCouponList[indexPath.row].couponDate!)
-        cell.priceLabel?.text = String(describing: restCouponList[indexPath.row].couponValue ?? 0)
-        switch restCouponList[indexPath.row].couponStatus! {
+        cell.barCodeLabel?.text = viewRestCouponList[indexPath.row].barCode
+        cell.dateLabel?.text = viewRestCouponList[indexPath.row].getCreationDate(milisecond: restCouponList[indexPath.row].couponDate!)
+        cell.priceLabel?.text = String(describing: viewRestCouponList[indexPath.row].couponValue ?? 0)
+        switch viewRestCouponList[indexPath.row].couponStatus! {
         case 1:
              cell.statusLabel.text = "paid"
         case 2:
@@ -84,4 +98,32 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
      }
      */
     
+}
+extension HistoryViewController : UISearchBarDelegate
+{
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBarIsActive = true
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBarIsActive = false
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBarIsActive = false
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBarIsActive = false
+    }
+    func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
+        searchBarIsActive = false
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredRestCouponList = restCouponList.filter({(coupon) ->Bool in
+            let txt: NSString = coupon.barCode! as NSString
+            let range = txt.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+            return range.location != NSNotFound
+        })
+        self.tableView.reloadData()
+        
+    }
 }
