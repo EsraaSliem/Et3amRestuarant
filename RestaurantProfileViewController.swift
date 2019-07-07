@@ -23,6 +23,7 @@ class RestaurantProfileViewController: UIViewController {
     
     //MARK :- property
     var usedCouponList: [UsedCoupon] = []
+    let rest = UserStoredData.returnUserDefaults()
     //MARK :- init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +32,11 @@ class RestaurantProfileViewController: UIViewController {
         
     }
     func loadData() {
-        let rest = UserStoredData.returnUserDefaults()
+
         titleLabel.title = rest.name
         restImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId:rest.image! )), completed: nil)
         emailLabel.text = rest.email
-        MealDAO.getTopMeal(resturantId: rest.restaurantId!){
-            self.topMealLabel.text = $0
-            
-        }
+       
         CouponDAO.getUsedCoupon(restId: rest.restaurantId!)
         { (couponList)
             in
@@ -46,9 +44,17 @@ class RestaurantProfileViewController: UIViewController {
             self.calculateDealsOperation()
             
         }
+        
      
     }
-    
+    func getTopMeal()
+    {
+        MealDAO.getTopMeal(resturantId: rest.restaurantId!){
+            self.topMealLabel.text = $0
+            SVProgressHUD.dismiss()
+            
+        }
+    }
     func calculateDealsOperation()
     {
         totalDealsLabel.text = String(usedCouponList.count)+"D"
@@ -64,7 +70,8 @@ class RestaurantProfileViewController: UIViewController {
         totalAmountLabel.text = String(totalAmountDeals)+"E"
         couponNumpaidLabel.text = String(paidList.count)+"D / "+String(paidMealsAmount)+"E"
         couponNumUnpaidLabel.text = String (usedCouponList.count - paidList.count)+"D / "+String(unpaidAmount)+"E"
-        SVProgressHUD.dismiss()
+        self.getTopMeal()
+       
     }
     
     @IBAction func closeButton(_ sender: Any) {

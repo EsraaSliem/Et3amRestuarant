@@ -36,16 +36,17 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         // tableView.reloadData()
         tableView.delegate = self
         tableView.dataSource = self
-       
+        
         titleLabel.text = UserStoredData.returnUserDefaults().name!
-        sortList()
-      //  mealList = meals
-        searchBar.delegate = self 
+        
+        //  mealList = meals
+        searchBar.delegate = self
         
     }
     func sortList()
     {
-        meals.sorted(by: { $0.mealId! > $1.mealId!})
+        meals.sort(by: { $0.mealId! >
+            $1.mealId!})
     }
     func loadData(pageNum:Int)
     {
@@ -58,10 +59,12 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             SVProgressHUD.dismiss()
             DispatchQueue.main.async {
                 self.meals.append(contentsOf: mealList)
+                self.sortList()
                 self.tableView.reloadData()
             }
         }
-        SVProgressHUD.dismiss()
+        
+         SVProgressHUD.dismiss()
         
     }
     
@@ -103,7 +106,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return meals.count
     }
-  
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: mealResuableIdentifier)! as! MealTableViewCell
         //cell.imageView?.image = UIImage(named: meals[indexPath.row].image!)
@@ -115,13 +118,13 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             print(mealList)
         }
         else{
-          
+            
             if indexPath.row == (meals.count - 1)
             {
                 self.checkToLoadNextPage()
             }
-              mealList = meals
-          }
+            mealList = meals
+        }
         print("mealList out ")
         print(mealList)
         cell.mealNameLabel?.text = mealList[indexPath.row].name
@@ -180,7 +183,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchBarIsActive = false
     }
     func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
-         searchBarIsActive = false
+        searchBarIsActive = false
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredMeals = meals.filter({(meal) ->Bool in
