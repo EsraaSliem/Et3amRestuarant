@@ -17,8 +17,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     var restCouponList : Array<UsedCoupon>=[]
     var filteredRestCouponList : Array<UsedCoupon>=[]
     var viewRestCouponList : Array<UsedCoupon>=[]
-     var searchBarIsActive = false
-   
+    var searchBarIsActive = false
+    
     
     // MARK: - Init
     override func viewDidLoad() {
@@ -39,8 +39,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             print("jjj")
             SVProgressHUD.dismiss()
             DispatchQueue.main.async {
-            self.restCouponList = couponList
-            self.tableView.reloadData()
+                self.restCouponList = couponList
+                self.tableView.reloadData()
             }
             
         }
@@ -69,13 +69,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.priceLabel?.text = String(describing: viewRestCouponList[indexPath.row].couponValue ?? 0)
         switch viewRestCouponList[indexPath.row].couponStatus! {
         case 1:
-             cell.statusLabel.text = "paid"
+            cell.statusLabel.text = "paid"
         case 2:
             cell.statusLabel.text = "pending"
         default:
             cell.statusLabel.text = "pending.."
         }
-       
+        
         return cell
         
     }
@@ -83,22 +83,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func logOut(_ sender: UIBarButtonItem) {
         UserStoredData.removeUserDefaults()
-        
         let loginVC = storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
-        
         self.present(loginVC, animated: true, completion: nil)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
+
 extension HistoryViewController : UISearchBarDelegate
 {
     

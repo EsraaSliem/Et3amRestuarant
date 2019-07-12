@@ -13,6 +13,7 @@
 		021A0A2E22BFAB5C00479AFC /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A0A2D22BFAB5C00479AFC /* RoundButton.swift */; };
 		021A0A3022BFC62500479AFC /* DesignableFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021A0A2F22BFC62500479AFC /* DesignableFile.swift */; };
 		024F3461228F5314007249C8 /* Et3amRestaurantTests in Resources */ = {isa = PBXBuildFile; fileRef = 024F3460228F5314007249C8 /* Et3amRestaurantTests */; };
+		0254DBBD22D8143F005A1809 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254DBBC22D8143F005A1809 /* TableViewController.swift */; };
 		0255B5932295F61600853B20 /* AddMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255B5922295F61600853B20 /* AddMealViewController.swift */; };
 		0255B597229636F300853B20 /* MealDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255B596229636F300853B20 /* MealDelegate.swift */; };
 		0255B599229641E800853B20 /* UpdateMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0255B598229641E800853B20 /* UpdateMealViewController.swift */; };
@@ -70,6 +71,7 @@
 		021A0A2D22BFAB5C00479AFC /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		021A0A2F22BFC62500479AFC /* DesignableFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableFile.swift; sourceTree = "<group>"; };
 		024F3460228F5314007249C8 /* Et3amRestaurantTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Et3amRestaurantTests; sourceTree = "<group>"; };
+		0254DBBC22D8143F005A1809 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		0255B5922295F61600853B20 /* AddMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealViewController.swift; sourceTree = "<group>"; };
 		0255B596229636F300853B20 /* MealDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDelegate.swift; sourceTree = "<group>"; };
 		0255B598229641E800853B20 /* UpdateMealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateMealViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 		C75B9A5E2289755000795EC1 = {
 			isa = PBXGroup;
 			children = (
+				0254DBBC22D8143F005A1809 /* TableViewController.swift */,
 				021A0A2C22BFAB3900479AFC /* Extensions */,
 				02151FA6229FF0EC00A6A94A /* resources */,
 				0255B595229636C700853B20 /* Protocol */,
@@ -580,6 +583,7 @@
 				0255B5932295F61600853B20 /* AddMealViewController.swift in Sources */,
 				021A0A3022BFC62500479AFC /* DesignableFile.swift in Sources */,
 				02677B582296A67B00CC4845 /* UpdateMealDelegate.swift in Sources */,
+				0254DBBD22D8143F005A1809 /* TableViewController.swift in Sources */,
 				C75B9A6B2289755000795EC1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

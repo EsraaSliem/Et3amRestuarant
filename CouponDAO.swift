@@ -60,10 +60,9 @@ class CouponDAO {
         }
         
     }
-    public  static func checkCouponReservation( code: String , completionHandler:@escaping(Int?)->Void )
+    public  static func checkCouponReservation( code: String , completionHandler:@escaping(Double?)->Void )
         
     {
-        
         var paramCode = "?code="+code
         
         let url : String = Et3amRestuarantAPI.couponBaseURL+CoupponURLs.checkReservation.rawValue+paramCode
@@ -86,10 +85,11 @@ class CouponDAO {
                     print(returnedData)
                     let code =  returnedData.value(forKey: "code")! as! Int
                     print(code)
-                    var x: Int?
+                    var x: Double?
                     if(code == 1)
                     {
-                        x = returnedData["id"] as?  Int
+                        let coupon = returnedData.value(forKey: "coupon")as! Dictionary<String, Any>
+                        x = coupon["couponValue"] as?  Double
                     }
                     completionHandler(x)
                     
@@ -103,11 +103,11 @@ class CouponDAO {
         
     }
     
-    public  static func useCoupon(restId: Int ,code: String ,price: Double, completionHandler:@escaping(Int?)->Void )
+    public  static func useCoupon(restId: Int ,code: String ,price: Double, mealId: Int, completionHandler:@escaping(Int?)->Void )
         
     {
         
-        var params = "?restaurantId="+String(restId)+"&barCode="+code+"&price="+String(price)
+        var params = "?restaurantId="+String(restId)+"&barCode="+code+"&price="+String(price)+"&mealId="+String(mealId)
         let url : String = Et3amRestuarantAPI.couponBaseURL+CoupponURLs.useCoupon.rawValue+params
         print(url)
         Alamofire.request(url ,

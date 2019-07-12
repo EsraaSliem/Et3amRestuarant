@@ -35,7 +35,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         //  print("count : \(meals.count)")
         // tableView.reloadData()
         tableView.delegate = self
-        tableView.dataSource = self
+        
         
         titleLabel.text = UserStoredData.returnUserDefaults().name!
         

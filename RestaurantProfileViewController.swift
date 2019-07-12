@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import SVProgressHUD
+
 class RestaurantProfileViewController: UIViewController {
     // MARK :- outlets
     @IBOutlet weak var restImageView: UIImageView!
@@ -24,6 +25,7 @@ class RestaurantProfileViewController: UIViewController {
     //MARK :- property
     var usedCouponList: [UsedCoupon] = []
     let rest = UserStoredData.returnUserDefaults()
+    
     //MARK :- init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,30 +33,24 @@ class RestaurantProfileViewController: UIViewController {
         loadData()
         
     }
+    //MARK :- loadData
     func loadData() {
-
+        
         titleLabel.title = rest.name
         restImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId:rest.image! )), completed: nil)
         emailLabel.text = rest.email
-       
+        
         CouponDAO.getUsedCoupon(restId: rest.restaurantId!)
-        { (couponList)
+        {
+            (couponList)
             in
             self.usedCouponList = couponList
             self.calculateDealsOperation()
             
         }
-        
-     
     }
-    func getTopMeal()
-    {
-        MealDAO.getTopMeal(resturantId: rest.restaurantId!){
-            self.topMealLabel.text = $0
-            SVProgressHUD.dismiss()
-            
-        }
-    }
+    
+    
     func calculateDealsOperation()
     {
         totalDealsLabel.text = String(usedCouponList.count)+"D"
@@ -63,7 +59,7 @@ class RestaurantProfileViewController: UIViewController {
                 $0.couponStatus == 1
             }
         )
-  
+        
         let totalAmountDeals = usedCouponList.reduce(0, { $0 + $1.couponValue!})
         let paidMealsAmount = paidList.reduce(0, { $0 + $1.couponValue!})
         let unpaidAmount = totalAmountDeals - paidMealsAmount
@@ -71,10 +67,22 @@ class RestaurantProfileViewController: UIViewController {
         couponNumpaidLabel.text = String(paidList.count)+"D / "+String(paidMealsAmount)+"E"
         couponNumUnpaidLabel.text = String (usedCouponList.count - paidList.count)+"D / "+String(unpaidAmount)+"E"
         self.getTopMeal()
-       
+        
+    }
+    
+    func getTopMeal()
+    {
+        MealDAO.getTopMeal(resturantId: rest.restaurantId!){
+            self.topMealLabel.text = $0
+            SVProgressHUD.dismiss()
+            
+        }
     }
     
     @IBAction func closeButton(_ sender: Any) {
+        UserStoredData.removeUserDefaults()
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+        self.present(loginVC, animated: true, completion: nil)
     }
     
     
