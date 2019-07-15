@@ -25,31 +25,51 @@ class RestaurantProfileViewController: UIViewController {
     //MARK :- property
     var usedCouponList: [UsedCoupon] = []
     let rest = UserStoredData.returnUserDefaults()
+    var pageNum = 1
     
     //MARK :- init
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.show()
+        
         loadData()
+        loadCoupons()
         
     }
+    
     //MARK :- loadData
     func loadData() {
-        
         titleLabel.title = rest.name
-        restImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId:rest.image! )), completed: nil)
+        restImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId:rest.image! )),
+                                  completed: nil)
         emailLabel.text = rest.email
-        
-        CouponDAO.getUsedCoupon(restId: rest.restaurantId!)
+    }
+    
+    
+    func loadCoupons(){
+        print("enter funccccccc")
+        SVProgressHUD.show()
+        CouponDAO.getUsedCoupon(restId: rest.restaurantId!,pageNum: pageNum)
         {
             (couponList)
             in
-            self.usedCouponList = couponList
-            self.calculateDealsOperation()
+            if !couponList.isEmpty
+            {
+                self.usedCouponList.append(contentsOf: couponList)
+                print("iffffff")
+                self.pageNum = self.pageNum + 1
+                self.loadCoupons()
+            }
+           
+            else
+            {
+                 print("elseeeee")
+                self.calculateDealsOperation()
+                
+                
+            }
             
         }
     }
-    
     
     func calculateDealsOperation()
     {

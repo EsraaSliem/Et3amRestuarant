@@ -59,7 +59,7 @@ class MealDAO {
             case .success:
                 let json = response.result.value as! NSDictionary
                 if(json["code"] as! Int == 1){
-                    let mealsList = json["results"] as! [NSDictionary]
+                    let mealsList = json["results"] as! [Dictionary<String, Any>]
                     print(json)
                     //  let results =  json["restaurant"] as! Array< NSDictionary >
                     
@@ -139,13 +139,16 @@ class MealDAO {
                                 
                             case .success:
                                 print("enter")
-                                let sucessDataValue = response.result.value
-                                let returnedData = sucessDataValue as! NSDictionary
+                                let sucessDataValue = response.result.value as! NSDictionary
+                                if sucessDataValue["code"] as! Int == 1
+                                {
+                                let returnedData = sucessDataValue["meal"] as! NSDictionary
                                 meal.mealId = meal_id
                                 meal.name = returnedData["mealName"] as? String
                                 meal.price = returnedData["mealValue"] as? Double
                                 meal.image = returnedData["mealImage"] as? String
                                 print(returnedData)
+                                }
                                 completionHandler(meal)
                                 break
                             case .failure(let error):

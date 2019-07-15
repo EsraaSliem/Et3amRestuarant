@@ -35,7 +35,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         //  print("count : \(meals.count)")
         // tableView.reloadData()
         tableView.delegate = self
-        
+        tableView.dataSource = self 
         
         titleLabel.text = UserStoredData.returnUserDefaults().name!
         
@@ -58,9 +58,14 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             SVProgressHUD.dismiss()
             DispatchQueue.main.async {
+                if !mealList.isEmpty
+                {
                 self.meals.append(contentsOf: mealList)
+                print ("meals here")
+                print(self.meals)
                 self.sortList()
                 self.tableView.reloadData()
+                }
             }
         }
         
@@ -90,20 +95,14 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-    func checkToLoadNextPage()
-    {
-        if(meals.count%10==0)
-        {
-            page = page + 1
-            loadData(pageNum: page)
-        }
-    }
+   
     // MARK: - Handler
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("count : \(meals.count)")
         if searchBarIsActive  && (filteredMeals.count != 0 ) {
             return filteredMeals.count
         }
+        
         return meals.count
     }
     
@@ -114,14 +113,14 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(meals[indexPath.row].name!)
         if searchBarIsActive  && (filteredMeals.count != 0 ){
             mealList = filteredMeals
-            print("mealList")
-            print(mealList)
+          
         }
         else{
             
-            if indexPath.row == (meals.count - 1)
+            if indexPath.row == meals.count - 1
             {
-                self.checkToLoadNextPage()
+                page = page + 1
+                loadData(pageNum: page)
             }
             mealList = meals
         }

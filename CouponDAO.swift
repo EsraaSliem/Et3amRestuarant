@@ -9,11 +9,13 @@
 import Foundation
 import Alamofire
 class CouponDAO {
-    static var coupons : Array<UsedCoupon> = []
-    public  static func getUsedCoupon( restId: Int, completionHandler:@escaping(Array<UsedCoupon>)->Void )
+    
+    public  static func getUsedCoupon( restId: Int , pageNum:Int, completionHandler:@escaping(Array<UsedCoupon>)->Void )
         
     {
-        let url : String = Et3amRestuarantAPI.couponBaseURL+CoupponURLs.couponList.rawValue+"?restaurantId="+String( restId)
+        var coupons : Array<UsedCoupon> = []
+        let url : String = Et3amRestuarantAPI.couponBaseURL+CoupponURLs.couponList.rawValue+"?restaurantId="+String( restId)+"&pageNum="+String(pageNum)
+        
         print(url)
         //"https://et3am.herokuapp.com/coupon/use_coupon_list?restaurantId=1"
          //  https://et3am.herokuapp.com/coupon/use_coupon_list?restaurantId=2
@@ -45,7 +47,7 @@ class CouponDAO {
                             coupon.couponDate = i["usedDate"] as? Double
                             coupon.couponValue = i["price"] as? Double
                             coupon.couponStatus = i["status"] as? Int
-                            self.coupons.append(coupon)
+                             coupons.append(coupon)
                         }
                        
                     }

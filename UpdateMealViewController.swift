@@ -12,13 +12,16 @@ import SVProgressHUD
 class UpdateMealViewController: UIViewController, UINavigationControllerDelegate,
 UIImagePickerControllerDelegate, UITextFieldDelegate{
     
-    
+    //MARK :- Outlets
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var mealName: UITextField!
+    
+    //MARK :- Properties
     var delegate : UpdateMealDelegate?
     var meal : Meal?
     
+    //MARK :- init
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -33,6 +36,9 @@ UIImagePickerControllerDelegate, UITextFieldDelegate{
         }
     }
     
+    //MARK :- Handling 
+    
+    //restriction on text fields to take only numbers
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
@@ -41,6 +47,8 @@ UIImagePickerControllerDelegate, UITextFieldDelegate{
         return string == numberFiltered
         
     }
+    
+    //change image func
     @IBAction func changeImage(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -49,6 +57,7 @@ UIImagePickerControllerDelegate, UITextFieldDelegate{
         self.present(image, animated: true, completion: nil)
     }
     
+    //upload image from gallery
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
@@ -65,6 +74,8 @@ UIImagePickerControllerDelegate, UITextFieldDelegate{
         
         
     }
+    
+    //update meal
     @IBAction func updateMeal(_ sender: UIButton) {
         if(!(priceTextField.text?.isEmpty)! && !(mealName.text?.isEmpty)!)
         {
@@ -79,11 +90,10 @@ UIImagePickerControllerDelegate, UITextFieldDelegate{
             
             MealDAO.updateMeal(parameters: parameters, rest_id: UserStoredData.returnUserDefaults().restaurantId!, meal_id: (meal?.mealId)!) {
                 (updatedMeal) in
+      
                 SVProgressHUD.dismiss()
                 DispatchQueue.main.async {
-                    
                     print("hhh")
-                    
                     self.delegate?.updateMeal(updatedMeal: updatedMeal)
                     self.navigationController?.popViewController(animated: true)
                     
@@ -96,6 +106,8 @@ UIImagePickerControllerDelegate, UITextFieldDelegate{
         }
         
     }
+    
+    //upload Image to server
     func uploadMealImage(_ imageData: Data) {
         
         ImageAPI.uploadImage(imgData: imageData, completionHandler: { result in
