@@ -98,7 +98,7 @@
 		C75B9A6A2289755000795EC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C75B9A6F2289755000795EC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C75B9A722289755000795EC1 /* Et3amRestaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Et3amRestaurant.xcdatamodel; sourceTree = "<group>"; };
-		C75B9A742289755000795EC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C75B9A742289755000795EC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Et3amRestaurant/Assets.xcassets; sourceTree = "<group>"; };
 		C75B9A772289755000795EC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C75B9A792289755000795EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C75B9A7E2289755000795EC1 /* Et3amRestaurantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Et3amRestaurantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +153,8 @@
 		02151FA6229FF0EC00A6A94A /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				C75B9A742289755000795EC1 /* Assets.xcassets */,
+				C75B9A6E2289755000795EC1 /* Main.storyboard */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -160,7 +162,6 @@
 		0217BFBC22933AE4004235C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C75B9A6E2289755000795EC1 /* Main.storyboard */,
 				021A0A2F22BFC62500479AFC /* DesignableFile.swift */,
 			);
 			name = View;
@@ -226,13 +227,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C72366BA228AA7DA00ED07BD /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		C72366C3228ACDC500ED07BD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				02C965B3229F6A44006D400A /* UserSoredData.swift */,
+				0210C91622CAEE5300325D8C /* RestaurantProfileViewController.swift */,
 				02104A3122BBC7D200E7ACE6 /* ImageAPI.swift */,
 				029180EA22909BA4002D3712 /* Pojo */,
 				029180EB22909BCB002D3712 /* DAO */,
@@ -263,7 +258,6 @@
 				025DB0E3228E726D0090B714 /* LoginViewController.swift */,
 				0255B5922295F61600853B20 /* AddMealViewController.swift */,
 				0255B598229641E800853B20 /* UpdateMealViewController.swift */,
-				0210C91622CAEE5300325D8C /* RestaurantProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -279,7 +273,6 @@
 				C759FF5A228C205600F1DD41 /* Controller */,
 				C72366C9228B064D00ED07BD /* Model */,
 				C72366C3228ACDC500ED07BD /* Utils */,
-				C72366BA228AA7DA00ED07BD /* Resources */,
 				C75B9A692289755000795EC1 /* Et3amRestaurant */,
 				C75B9A812289755000795EC1 /* Et3amRestaurantTests */,
 				C75B9A8C2289755000795EC1 /* Et3amRestaurantUITests */,
@@ -305,7 +298,6 @@
 			isa = PBXGroup;
 			children = (
 				C75B9A6A2289755000795EC1 /* AppDelegate.swift */,
-				C75B9A742289755000795EC1 /* Assets.xcassets */,
 				C75B9A762289755000795EC1 /* LaunchScreen.storyboard */,
 				C75B9A792289755000795EC1 /* Info.plist */,
 				C75B9A712289755000795EC1 /* Et3amRestaurant.xcdatamodeld */,

@@ -21,6 +21,7 @@ class VerificationViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet var popUpView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var selectButton: UIButton!
+    var loadMealFlag = true
     var mealList : [Meal] = []
     var selectedMeal: Meal?
     var couponPrice: Double = 0.0
@@ -28,7 +29,7 @@ class VerificationViewController: UIViewController, UITableViewDelegate, UITable
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleNavBar.title = UserStoredData.returnUserDefaults().name
+        titleNavBar.title = UserStoredData.returnUserDefaults()?.name
         self.tableView.delegate = self
         self.tableView.dataSource = self
         popUpView.layer.cornerRadius = 10
@@ -78,7 +79,7 @@ extension VerificationViewController {
     
     func loadMeals(pageNum : Int){
         
-        MealDAO.getMeals(resturantId: UserStoredData.returnUserDefaults().restaurantId!, pageNum: page)
+        MealDAO.getMeals(resturantId: (UserStoredData.returnUserDefaults()?.restaurantId!)!, pageNum: page)
         {
             (meals)
             in
@@ -108,7 +109,7 @@ extension VerificationViewController {
     @IBAction func DoneButton(_ sender: Any) {
         if let selectedMeal2 = selectedMeal
         {
-            CouponDAO.useCoupon(restId: UserStoredData.returnUserDefaults().restaurantId!, code: barCodeTextField.text! ,price: selectedMeal2.price!,mealId: selectedMeal2.mealId!)
+            CouponDAO.useCoupon(restId: (UserStoredData.returnUserDefaults()?.restaurantId!)!, code: barCodeTextField.text! ,price: selectedMeal2.price!,mealId: selectedMeal2.mealId!)
             {
                 (id)
                 in

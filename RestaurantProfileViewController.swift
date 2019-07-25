@@ -38,17 +38,17 @@ class RestaurantProfileViewController: UIViewController {
     
     //MARK :- loadData
     func loadData() {
-        titleLabel.title = rest.name
-        restImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId:rest.image! )),
+        titleLabel.title = rest?.name
+        restImageView.sd_setImage(with: URL(string: ImageAPI.getImage(type: .original, publicId:(rest?.image!)! )),
                                   completed: nil)
-        emailLabel.text = rest.email
+        emailLabel.text = rest?.email
     }
     
     
     func loadCoupons(){
         print("enter funccccccc")
         SVProgressHUD.show()
-        CouponDAO.getUsedCoupon(restId: rest.restaurantId!,pageNum: pageNum)
+        CouponDAO.getUsedCoupon(restId: (rest?.restaurantId!)!,pageNum: pageNum)
         {
             (couponList)
             in
@@ -92,7 +92,7 @@ class RestaurantProfileViewController: UIViewController {
     
     func getTopMeal()
     {
-        MealDAO.getTopMeal(resturantId: rest.restaurantId!){
+        MealDAO.getTopMeal(resturantId: (rest?.restaurantId!)!){
             self.topMealLabel.text = $0
             SVProgressHUD.dismiss()
             

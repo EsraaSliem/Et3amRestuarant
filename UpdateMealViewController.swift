@@ -88,7 +88,7 @@ UIImagePickerControllerDelegate, UITextFieldDelegate{
             ]
             print("mealImage"+meal!.image!)
             
-            MealDAO.updateMeal(parameters: parameters, rest_id: UserStoredData.returnUserDefaults().restaurantId!, meal_id: (meal?.mealId)!) {
+            MealDAO.updateMeal(parameters: parameters, rest_id: (UserStoredData.returnUserDefaults()?.restaurantId!)!, meal_id: (meal?.mealId)!) {
                 (updatedMeal) in
       
                 SVProgressHUD.dismiss()

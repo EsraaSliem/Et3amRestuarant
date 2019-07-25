@@ -19,6 +19,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     var viewRestCouponList : Array<UsedCoupon>=[]
     var searchBarIsActive = false
     var pageNum = 1
+    var loadCouponFlag = true
     
     // MARK: - Init
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         tableView.delegate = self
         tableView.dataSource = self
-        titleNavBar.title = UserStoredData.returnUserDefaults().name
+        titleNavBar.title = UserStoredData.returnUserDefaults()?.name
         loadData()
         searchBar.delegate = self
     }
@@ -38,7 +39,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     func loadCouponsByPageNum(pageNum:Int)
     {
-        CouponDAO.getUsedCoupon(restId: UserStoredData.returnUserDefaults().restaurantId!,pageNum: pageNum){
+        print("num")
+        print(pageNum)
+        CouponDAO.getUsedCoupon(restId: (UserStoredData.returnUserDefaults()?.restaurantId!)!,pageNum: pageNum){
             (couponList)
             in
             print("jjj")
@@ -64,7 +67,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if(indexPath.row == restCouponList.count-1)
+        if(indexPath.row == restCouponList.count-1) && loadCouponFlag
         {
             pageNum = pageNum + 1
             loadCouponsByPageNum(pageNum: pageNum)

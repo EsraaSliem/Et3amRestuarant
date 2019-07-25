@@ -21,10 +21,11 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     var filteredMeals : Array<Meal> = []
     var restaurantId :Int?
     var page: Int = 1
+    var loadingMealFlag = true
     
-    
+    @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var searchBar: UISearchBar!
-    let restaurant: Resturant = UserStoredData.returnUserDefaults()
+    let restaurant: Resturant = UserStoredData.returnUserDefaults()!
     var searchBarIsActive = false
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -35,9 +36,8 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         //  print("count : \(meals.count)")
         // tableView.reloadData()
         tableView.delegate = self
-        tableView.dataSource = self 
-        
-        titleLabel.text = UserStoredData.returnUserDefaults().name!
+        tableView.dataSource = self
+        navigationBar.title = UserStoredData.returnUserDefaults()?.name
         
         //  mealList = meals
         searchBar.delegate = self
@@ -51,25 +51,30 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadData(pageNum:Int)
     {
         
-        SVProgressHUD.show()
-        MealDAO.getMeals(resturantId: restaurant.restaurantId! ,pageNum: pageNum ){
-            (mealList)
-            in
-            
-            SVProgressHUD.dismiss()
-            DispatchQueue.main.async {
-                if !mealList.isEmpty
-                {
-                self.meals.append(contentsOf: mealList)
-                print ("meals here")
-                print(self.meals)
-                self.sortList()
-                self.tableView.reloadData()
+            SVProgressHUD.show()
+            MealDAO.getMeals(resturantId: restaurant.restaurantId! ,pageNum: pageNum ){
+                (mealList)
+                in
+                
+                SVProgressHUD.dismiss()
+                DispatchQueue.main.async {
+                    if !mealList.isEmpty
+                    {
+                        self.meals.append(contentsOf: mealList)
+                        print ("meals here")
+                        print(self.meals)
+                        self.sortList()
+                        self.tableView.reloadData()
+                    }
+                    else
+                    {
+                        self.loadingMealFlag = false
+                    }
+                    
                 }
             }
-        }
         
-         SVProgressHUD.dismiss()
+        SVProgressHUD.dismiss()
         
     }
     
@@ -95,7 +100,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-   
+    
     // MARK: - Handler
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("count : \(meals.count)")
@@ -113,14 +118,18 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
         print(meals[indexPath.row].name!)
         if searchBarIsActive  && (filteredMeals.count != 0 ){
             mealList = filteredMeals
-          
+            
         }
         else{
             
             if indexPath.row == meals.count - 1
             {
+                if self.loadingMealFlag
+                {
+                    print("enter")
                 page = page + 1
                 loadData(pageNum: page)
+                }
             }
             mealList = meals
         }
@@ -143,7 +152,7 @@ class MealViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            MealDAO.deleteMeal(rest_id: UserStoredData.returnUserDefaults().restaurantId!, meal_id: meals[indexPath.row].mealId!)
+            MealDAO.deleteMeal(rest_id: (UserStoredData.returnUserDefaults()?.restaurantId!)!, meal_id: meals[indexPath.row].mealId!)
             meals.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

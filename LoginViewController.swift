@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+
 class LoginViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var logoImageView: UIImageView!
@@ -47,6 +48,7 @@ class LoginViewController: UIViewController {
             }
             else
             {
+                //SVProgressHUD.showError(withStatus: "invalid email or password")
                 self.showToast(message: "invalid email or password")
             }
         }

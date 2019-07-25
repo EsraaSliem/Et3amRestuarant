@@ -19,7 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        print("did load")
+        if let userDefault = UserStoredData.returnUserDefaults() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "tabView")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
         
+        }
         
         return true
     }
